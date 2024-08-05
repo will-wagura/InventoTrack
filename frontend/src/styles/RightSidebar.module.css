@@ -1,11 +1,11 @@
 /* RightSidebar.module.css */
 .rightSidebar {
-    width: 300px;
-    background-color: #ffffff;
-    padding: 20px;
-    border-left: 1px solid #e0e0e0;
-    overflow-y: auto;
-  }
+  width: 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-left: 1px solid #e0e0e0;
+  overflow-y: auto;
+}
   
   .search input {
     width: 100%;
