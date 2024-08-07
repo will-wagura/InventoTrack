@@ -7,11 +7,13 @@ const Sidebar: React.FC = () => {
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.logo}>InventoTrack</div>
+      <div className={styles.logo}>
+        <img src="/src/assets/logo sidebar.png" alt="InventoTrack Logo" />
+      </div>
       <nav>
         <ul>
           {menuItems.map((item, index) => (
-            <li key={index}>
+            <li key={index} className={styles.menuItem}>
               <a 
                 href="#" 
                 className={activeItem === item ? styles.active : ''}

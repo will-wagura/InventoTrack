@@ -1,4 +1,3 @@
-/* Sidebar.module.css */
 .sidebar {
   width: 200px;
   background-color: #ffffff;
@@ -10,7 +9,12 @@
   font-size: 24px;
   font-weight: bold;
   color: #00bfa5;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Adjusted margin */
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100%; /* Make sure the logo fits within the sidebar */
 }
 
 .sidebar ul {
@@ -18,8 +22,8 @@
   padding: 0;
 }
 
-.sidebar li {
-  margin-bottom: 15px;
+.menuItem {
+  margin-bottom: 20px; /* Increased margin to create a larger gap */
 }
 
 .sidebar a {
@@ -28,14 +32,11 @@
   font-size: 16px;
   display: flex;
   align-items: center;
+  padding: 5px 0; /* Reduced padding */
 }
 
 .sidebar a:hover {
   color: #00bfa5;
-}
-
-.sidebar a svg {
-  margin-right: 10px;
 }
 
 .active {

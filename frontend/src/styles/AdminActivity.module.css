@@ -1,0 +1,50 @@
+.container {
+    border-radius: 5px;
+    background-color: rgba(240, 241, 243, 1);
+    box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    margin-top: 50px;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    padding: 39px 33px 91px;
+    font: 14px Inter, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .container {
+      padding-left: 20px;
+      margin: 40px 2px 0 0;
+    }
+  }
+  
+  .title {
+    color: rgba(77, 77, 77, 1);
+    font-weight: 600;
+  }
+  
+  .divider {
+    background-color: #e4e5e7;
+    align-self: stretch;
+    margin-top: 15px;
+    height: 1px;
+  }
+  
+  .activityList {
+    display: flex;
+    flex-direction: column; /* Changed from row to column */
+    margin-top: 13px;
+    gap: 40px 0px; /* Adjusted the gap to suit vertical spacing */
+}
+
+  
+  .activityLabels {
+    color: rgba(96, 96, 96, 1);
+    font-weight: 400;
+  }
+  
+  .activityValues {
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    text-align: right;
+  }

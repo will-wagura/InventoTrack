@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.logoSection}>
-          <img src="/path/to/your/logo.png" alt="InventoTrack Logo" className={styles.logo} />
+          <img src="/src/assets/inventotrack-high-resolution-logo-transparent (2).png" alt="InventoTrack Logo" className={styles.logo} />
           <p>Inventory simplified for small teams and developers.</p>
         </div>
         

@@ -1,0 +1,30 @@
+.statItem {
+    display: flex;
+    gap: 6px;
+    line-height: 1;
+  }
+  
+  .statIndicator {
+    border-radius: 3px;
+    align-self: start;
+    display: flex;
+    width: 14px;
+    height: 10px;
+  }
+  
+  .statIndicatorPaid {
+    background-color: rgba(43, 101, 248, 1);
+  }
+  
+  .statIndicatorUnpaid {
+    background-color: rgba(235, 235, 235, 1);
+  }
+  
+  .statText {
+    color: rgba(0, 0, 0, 1);
+  }
+  
+  .statValue {
+    font-weight: 700;
+  }
+  
