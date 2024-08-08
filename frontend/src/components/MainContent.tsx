@@ -61,6 +61,7 @@ import React, { useState } from 'react';
 import styles from '../styles/MainContent.module.css';
 import OrderStats from './OrderStats';
 import OverallStoreActivity from './OverallStoreActivity';
+import ManageStore from './ManageStore';
 
 const MainContent: React.FC = () => {
   const [stores, setStores] = useState([
@@ -86,23 +87,7 @@ const MainContent: React.FC = () => {
 
   return (
     <main className={styles.mainContent}>
-      <div className={styles.manageStore}>
-        <h2>Manage Store</h2>
-        <button className={styles.addStore} onClick={handleAddStore}>Add Store</button>
-      </div>
-      <div className={styles.storeList}>
-        {stores.map((store) => (
-          <div key={store.id} className={styles.storeItem}>
-            <div className={styles.shopLocal}>Shop local!</div>
-            <div>
-              <h3>{store.name}</h3>
-              <p>{store.branch}</p>
-              <p>{store.address}</p>
-            </div>
-            <button className={styles.editButton} onClick={() => handleEditStore(store.id)}>Edit</button>
-          </div>
-        ))}
-      </div>
+      <ManageStore />
       <div className={styles.charts}>
         <div className={styles.ordersChart}>
           <OrderStats />
@@ -110,7 +95,7 @@ const MainContent: React.FC = () => {
         <div className={styles.activityChart}>
           <h3>Overall Store Activity</h3>
           {/* Implement line chart here */}
-          <OverallStoreActivity/>
+          <OverallStoreActivity />
         </div>
       </div>
     </main>

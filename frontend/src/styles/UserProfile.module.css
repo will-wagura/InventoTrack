@@ -1,0 +1,50 @@
+.profileContainer {
+    align-self: center;
+    display: flex;
+    width: 265px;
+    max-width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+    font: 400 20px Lato, sans-serif;
+  }
+  
+  .userInfo {
+    display: flex;
+    gap: 7px;
+  }
+  
+  .avatar {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 55px;
+    border-radius: 50%;
+  }
+  
+  .textContainer {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .userName {
+    color: rgba(41, 41, 41, 1);
+  }
+  
+  @media (max-width: 991px) {
+    .userName {
+      margin-right: 5px;
+    }
+  }
+  
+  .userRole {
+    color: rgba(39, 216, 195, 1);
+  }
+  
+  .icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 25px;
+    margin: auto 0;
+  }
