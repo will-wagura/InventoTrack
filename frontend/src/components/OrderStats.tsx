@@ -4,8 +4,8 @@ import StatItem from './StatItem';
 
 const OrderStats: React.FC = () => {
   const stats = [
-    { value: '40%', label: 'Pre Paid', isPaid: true },
-    { value: '60%', label: 'Post Paid', isPaid: false }
+    { value: '40%', label: 'Paid', isPaid: true },
+    { value: '60%', label: 'Unpaid', isPaid: false }
   ];
 
   return (

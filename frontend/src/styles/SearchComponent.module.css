@@ -104,9 +104,13 @@
     background-color: #f8f8f8;
     border-bottom: 1px solid #e0e0e0;
     color: #333;
+    width: 90%; 
+    border-radius: 5px;
+    margin-left: 42px;
   }
   
   .searchBox {
+    flex-grow: 1;
     display: flex;
     align-items: center;
     background-color: black;
@@ -117,7 +121,8 @@
     max-width: 300px;
     margin: 0 20px;
   }
-  
+
+ 
   .searchIcon {
     width: 20px;
     height: 20px;
