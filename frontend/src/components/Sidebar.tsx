@@ -1,9 +1,20 @@
+
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/Sidebar.module.css';
 
 const Sidebar: React.FC = () => {
   const [activeItem, setActiveItem] = useState('Manage Store');
-  const menuItems = ['Home', 'Product', 'Order', 'Payment', 'Statistic', 'Manage Store', 'Manage Users', 'Settings'];
+  const menuItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Product', path: '/product' },
+    { name: 'Order', path: '/order' },
+    { name: 'Payment', path: '/payment' },
+    { name: 'Statistic', path: '/statistic' },
+    { name: 'Manage Store', path: '/manage-store' },
+    { name: 'Manage Users', path: '/manage-users' },
+    { name: 'Settings', path: '/settings' },
+  ];
 
   return (
     <aside className={styles.sidebar}>
@@ -14,13 +25,13 @@ const Sidebar: React.FC = () => {
         <ul>
           {menuItems.map((item, index) => (
             <li key={index} className={styles.menuItem}>
-              <a 
-                href="#" 
-                className={activeItem === item ? styles.active : ''}
-                onClick={() => setActiveItem(item)}
+              <Link
+                to={item.path}
+                className={activeItem === item.name ? styles.active : ''}
+                onClick={() => setActiveItem(item.name)}
               >
-                {item}
-              </a>
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -30,3 +41,4 @@ const Sidebar: React.FC = () => {
 };
 
 export default Sidebar;
+

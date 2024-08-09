@@ -1,28 +1,30 @@
 import React from 'react';
-import styles from '../styles/AdminActivity.module.css';
-import ActivityItem from './ActivityItem';
 
-const activityData = [
-  { label: 'People Added', value: 139 },
-  { label: 'Product Created', value: 283 },
-  { label: 'UTM Created', value: 782 },
-  { label: 'Email Sent (Campaign)', value: 1923 },
-  { label: 'Content added', value: 103 },
-  { label: 'Products Updated', value: 477 },
-  { label: 'Reports Downloaded', value: 280 },
-];
 
 const AdminActivity: React.FC = () => {
+  const activities = {
+    peopleAdded: 139,
+    productCreated: 283,
+    utmCreated: 782,
+    emailSendCreated: 1923,
+    contentAdded: 103,
+    productsUpdated: 477,
+    reportsDownloaded: 280,
+  };
+
   return (
-    <section className={styles.container}>
-      <h2 className={styles.title}>Admin Activity</h2>
-      <hr className={styles.divider} />
-      <div className={styles.activityList}>
-        {activityData.map((item, index) => (
-          <ActivityItem key={index} label={item.label} value={item.value} />
-        ))}
-      </div>
-    </section>
+    <div className="admin-activity">
+      <h3>Admin Activity</h3>
+      <ul>
+        <li>People Added: {activities.peopleAdded}</li>
+        <li>Product Created: {activities.productCreated}</li>
+        <li>UTM Created: {activities.utmCreated}</li>
+        <li>Email Send Created: {activities.emailSendCreated}</li>
+        <li>Content Added: {activities.contentAdded}</li>
+        <li>Products Updated: {activities.productsUpdated}</li>
+        <li>Reports Downloaded: {activities.reportsDownloaded}</li>
+      </ul>
+    </div>
   );
 };
 

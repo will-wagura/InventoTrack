@@ -1,0 +1,103 @@
+.manage-users {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .add-admin, .admin-list {
+    margin-bottom: 30px;
+  }
+  
+  .add-admin h3, .admin-list h3 {
+    color: #444;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .add-admin input[type="text"], .add-admin input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .add-admin button {
+    padding: 10px 20px;
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-admin button:hover {
+    background-color: #218872;
+  }
+  
+  .admin-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-list li {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .admin-list li span {
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .admin-list button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 10px;
+  }
+  
+  .admin-list button:first-of-type {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .admin-list button:first-of-type:hover {
+    background-color: #e0a800;
+  }
+  
+  .admin-list button:last-of-type {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .admin-list button:last-of-type:hover {
+    background-color: #c82333;
+  }
+  
