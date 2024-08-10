@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoMdNotifications } from "react-icons/io";
 
 interface Message {
   sender: string;
@@ -21,7 +22,7 @@ const Inbox: React.FC = () => {
        <div className="inbox-header">
         <input type="text" className="search-bar" placeholder="Search..." />
         <div className="notification-bell">
-          <span className="bell-icon">🔔</span>
+        <IoMdNotifications className="bell-icon" />
         </div>
       </div>
     <div className="inbox">

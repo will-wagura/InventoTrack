@@ -93,7 +93,7 @@ display: flex;
 
 .notification-bell {
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -245,3 +245,43 @@ display: flex;
   padding: 8px 15px;
   cursor: pointer;
 }
+
+
+/* Light Theme */
+/* body.light {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --sidebar-background: #f0f0f0;
+  --button-background: #f0f0f0;
+  --button-text: #000000;
+} */
+
+/* Dark Theme */
+/* body.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --sidebar-background: #333333;
+  --button-background: #333333;
+  --button-text: #ffffff;
+} */
+
+/* General Theme-Related Styles */
+/* body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.right-sidebar {
+  background-color: var(--sidebar-background);
+}
+.theme-toggle {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+} */

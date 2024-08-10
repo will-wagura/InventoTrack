@@ -26,6 +26,7 @@
   margin-bottom: 20px; /* Increased margin to create a larger gap */
 }
 
+
 .sidebar a {
   text-decoration: none;
   color: #333;
@@ -42,4 +43,11 @@
 .active {
   color: #00bfa5 !important;
   font-weight: bold;
+}
+
+.sidebar .icon {
+  margin-right: 10px;
+}
+.sidebar span {
+  margin-left: 10px; 
 }
