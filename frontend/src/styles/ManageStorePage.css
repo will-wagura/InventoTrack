@@ -7,7 +7,9 @@
 
 .main-content {
   flex-grow: 1;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
 }
 
 /* Right Side Bar */
@@ -19,10 +21,13 @@
   overflow-y: auto;
   color: #333
 }
+
 /* Inbox.css */
 .inbox {
   font-family: Arial, sans-serif;
   margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 15px;
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 5px;
@@ -36,6 +41,7 @@
 }
 
 .message {
+
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
@@ -58,11 +64,37 @@
 }
 
 .unread {
-  font-weight: bold;
+  background-color: #27D8C3;
+  border-radius: 5px;
 }
 
 .read {
   color: #555;
+}
+/*Search bar and notification bell*/
+
+input[type="search"], .search-bar {
+  background-color: #f8f9fa; /* Light grey color */
+  color: #333; /* Text color */
+  border: 1px solid #ccc; /* Optional: adjust the border color */
+}
+
+.inbox-header{
+display: flex;
+
+}
+.search-bar {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.notification-bell {
+  margin-left: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /* AdminActivity.css */
@@ -72,6 +104,7 @@
   padding: 10px;
   border-radius: 5px;
   background-color: #f8f9fa;
+  margin-right: 15px;
 }
 
 .admin-activity h3 {
@@ -105,7 +138,8 @@
 }
 
 .header input[type="text"] {
-  padding: 10px;
+  background-color: #f8f9fa;
+  padding: 5px;
   border-radius: 20px;
   border: 1px solid #ced4da;
   width: 300px;
@@ -123,17 +157,27 @@
   margin-right: 10px;
 }
 
-.user-info span {
-  color: #495057;
+
+
+.name {
+  color: #495057 !important;
   font-weight: bold;
+}
+
+.title {
+  color: #27D8C3 !important;
 }
 
 /* Store list styles */
 .store-list {
   background-color: white;
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 700px; 
+  overflow-y: auto; 
 }
 
 .add-store {

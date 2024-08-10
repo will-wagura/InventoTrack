@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 interface Message {
   sender: string;
   time: string;
@@ -18,14 +17,24 @@ const Inbox: React.FC = () => {
   ];
 
   return (
+    <div className="inbox-container">
+       <div className="inbox-header">
+        <input type="text" className="search-bar" placeholder="Search..." />
+        <div className="notification-bell">
+          <span className="bell-icon">🔔</span>
+        </div>
+      </div>
     <div className="inbox">
+     
       <h3>Inbox</h3>
       {messages.map((msg, index) => (
         <div className={`message ${msg.read ? 'read' : 'unread'}`} key={index}>
           <p><strong>{msg.sender}</strong> <span>{msg.time}</span></p>
           <p>{msg.message}</p>
         </div>
+        
       ))}
+      </div>
     </div>
   );
 };

@@ -6,8 +6,13 @@ const Header: React.FC = () => {
       <input type="text" placeholder="Search..." />
       <div className="user-info">
         <img src="src/assets/people.png" alt="Profile" />
-        <span>Jack Doe</span>
-        <span>Merchant</span>
+        <h5>
+  <span className="name">Abdul</span>
+  <br/>
+  <span className="title">Merchant</span>
+</h5>
+        
+      
       </div>
     </div>
   );
