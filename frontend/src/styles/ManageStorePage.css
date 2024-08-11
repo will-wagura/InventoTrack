@@ -235,10 +235,11 @@ display: flex;
   margin-bottom: 10px;
   border: 1px solid #ced4da;
   border-radius: 5px;
+  background-color: #ced4da;
 }
 
 .save-store {
-  background-color: #28a745;
+  background-color: #817AF3;
   color: white;
   border: none;
   border-radius: 5px;
