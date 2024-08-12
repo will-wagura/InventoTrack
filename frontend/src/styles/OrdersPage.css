@@ -1,55 +1,52 @@
-.orders-page-container {
+
+
+   .order-page {
     padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #333;
+   
+  }
+/*   
+  h1 {
+  font-size: 100px;
+  color: #00bfa5;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 20px;
+  left: 30.5%;
+  font-weight: 900;
+  } */
+  
+  .chart-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
   }
   
-  .orders-page-container .store-section {
-    margin-bottom: 40px;
+  .chart-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 48%;
   }
   
-  .orders-page-container h3 {
-    color: #333;
+  .chart-container.full-width {
+    width: 100%;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #555;
     margin-bottom: 20px;
   }
   
-  .orders-page-container .overview {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  @media (max-width: 768px) {
+    .chart-row {
+      flex-direction: column;
+    }
   
-  .orders-page-container .product-lists {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    .chart-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
-  
-  .orders-page-container .paid-products,
-  .orders-page-container .unpaid-products {
-    width: 45%;
-  }
-  
-  .orders-page-container h4 {
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .orders-page-container ul {
-    list-style: none;
-    padding: 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  .orders-page-container li {
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .orders-page-container li:last-child {
-    border-bottom: none;
-  }
-  

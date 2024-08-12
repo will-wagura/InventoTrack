@@ -36,8 +36,13 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 30px;
+  font-weight: 900;
+  position: relative;
+  left: 35.5%;
+  align-items: center;
+  justify-content: center;
+  /* line-height: 1.1; */
 }
 
 button {
@@ -50,7 +55,7 @@ button {
   background-color: #58D365;
   cursor: pointer;
   transition: border-color 0.25s; */
-  background-color: #817AF3;
+  background-color: #c82333;
   color: white;
   border: none;
   border-radius: 5px;

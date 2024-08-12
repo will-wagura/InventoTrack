@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from '../styles/Sidebar.module.css';
 import {  FaChartLine } from 'react-icons/fa';
 import { FiHome, FiBriefcase } from "react-icons/fi";
-import { IoFileTrayOutline, IoStorefrontOutline } from "react-icons/io5";
+import { IoStorefrontOutline } from "react-icons/io5";
 import { IoMdCard } from "react-icons/io";
 import { MdManageAccounts } from "react-icons/md";
 import { HiOutlineCog } from "react-icons/hi";
@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
   const [activeItem, setActiveItem] = useState('Manage Store');
   const menuItems = [
     { icon: <FiHome />, name: 'Home', path: '/'},
-    { icon: <IoFileTrayOutline />, name: 'Product', path: '/product' },
+    // { icon: <IoFileTrayOutline />, name: 'Product', path: '/product' },
     { icon: <FiBriefcase />, name: 'Order', path: '/order' },
     { icon: <IoMdCard />, name: 'Payment', path: '/payment' },
     { icon: <FaChartLine />, name: 'Statistic', path: '/statistic' },

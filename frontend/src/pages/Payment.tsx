@@ -1,66 +1,126 @@
 import React, { useState } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import "../styles/PaymentPage.css";
+import '../styles/PaymentPage.css';
 
 interface Product {
   id: number;
   name: string;
-  sales: number[];
-  stockLevels: number[];
-  store: string;
+  price: number;
+  isPaid: boolean;
 }
 
+interface Store {
+  id: number;
+  name: string;
+  products: Product[];
+}
+
+const initialStores: Store[] = [
+  {
+    id: 1,
+    name: "Store A",
+    products: [
+      { id: 1, name: "Product 1", price: 10000, isPaid: true },
+      { id: 2, name: "Product 2", price: 15000, isPaid: false },
+      { id: 3, name: "Product 3", price: 20000, isPaid: true },
+    ]
+  },
+  {
+    id: 2,
+    name: "Store B",
+    products: [
+      { id: 4, name: "Product 4", price: 12000, isPaid: false },
+      { id: 5, name: "Product 5", price: 18000, isPaid: true },
+      { id: 6, name: "Product 6", price: 22000, isPaid: false },
+    ]
+  },
+];
+
 const Payment: React.FC = () => {
-  const [products] = useState<Product[]>([
-    {
-      id: 1,
-      name: 'Product A',
-      sales: [100, 150, 200, 250, 300],
-      stockLevels: [50, 45, 40, 35, 30],
-      store: 'Store 1',
-    },
-    {
-      id: 2,
-      name: 'Product B',
-      sales: [80, 130, 180, 230, 280],
-      stockLevels: [60, 55, 50, 45, 40],
-      store: 'Store 2',
-    },
-    // Add more products as needed
-  ]);
+  const [stores, setStores] = useState<Store[]>(initialStores);
+
+  const togglePaymentStatus = (storeId: number, productId: number) => {
+    setStores(prevStores => 
+      prevStores.map(store => 
+        store.id === storeId 
+          ? {
+              ...store,
+              products: store.products.map(product => 
+                product.id === productId 
+                  ? { ...product, isPaid: !product.isPaid }
+                  : product
+              )
+            }
+          : store
+      )
+    );
+  };
 
   return (
-    <div className="payment-page-container">
-      <h2>Payment Metrics</h2>
-
-      {products.map(product => (
-        <div key={product.id} className="product-metrics">
-          <h3>{product.name} - {product.store}</h3>
-          <div className="metrics-overview">
-            <div className="metric-chart">
-              <h4>Sales Over Time</h4>
-              <ResponsiveContainer width="100%" height={200}>
-                <LineChart data={product.sales.map((sales, index) => ({ month: `M${index + 1}`, sales }))}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="month" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="sales" stroke="#8884d8" activeDot={{ r: 8 }} />
-                </LineChart>
-              </ResponsiveContainer>
+    <div className="payment-page">
+      <h1>Payment Overview</h1>
+      {stores.map(store => (
+        <div key={store.id} className="store-section">
+          <h2>{store.name}</h2>
+          <div className="payment-overview">
+            <div className="overview-item">
+              <h3>Paid Products</h3>
+              <p>{store.products.filter(p => p.isPaid).length}</p>
             </div>
-
-            <div className="metric-chart">
-              <h4>Stock Levels Over Time</h4>
-              <ResponsiveContainer width="100%" height={200}>
-                <LineChart data={product.stockLevels.map((stock, index) => ({ month: `M${index + 1}`, stock }))}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="month" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="stock" stroke="#82ca9d" activeDot={{ r: 8 }} />
-                </LineChart>
-              </ResponsiveContainer>
+            <div className="overview-item">
+              <h3>Unpaid Products</h3>
+              <p>{store.products.filter(p => !p.isPaid).length}</p>
+            </div>
+          </div>
+          <div className="product-lists">
+            <div className="product-list">
+              <h3>Paid Products</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {store.products.filter(p => p.isPaid).map(product => (
+                    <tr key={product.id}>
+                      <td>{product.name}</td>
+                      <td>Ksh{product.price.toFixed(2)}</td>
+                      <td>
+                        <button onClick={() => togglePaymentStatus(store.id, product.id)}>
+                          Mark as Unpaid
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="product-list">
+              <h3>Unpaid Products</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {store.products.filter(p => !p.isPaid).map(product => (
+                    <tr key={product.id}>
+                      <td>{product.name}</td>
+                      <td>Ksh{product.price.toFixed(2)}</td>
+                      <td>
+                        <button onClick={() => togglePaymentStatus(store.id, product.id)}>
+                          Mark as Paid
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

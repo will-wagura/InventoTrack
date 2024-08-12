@@ -38,22 +38,22 @@ const Home: React.FC = () => {
           <div className="stats">
             <div className="stat">
               <FontAwesomeIcon icon={faShoppingCart}  className="icon" color="#17a2b8" />
-              <span className="value">7,832</span>
+              <span className="value">Ksh 7,832</span>
               <span className="label">Sales</span>
             </div>
             <div className="stat">
               <FontAwesomeIcon icon={faMoneyBillWave} className="icon" color="#817AF3" />
-              <span className="value">$19,300</span>
+              <span className="value">Ksh 19,300</span>
               <span className="label">Revenue</span>
             </div>
             <div className="stat">
               <FontAwesomeIcon icon={faChartLine} className="icon" color="#58D365" />
-              <span className="value">$858</span>
+              <span className="value">Ksh 858</span>
               <span className="label">Profit</span>
             </div>
             <div className="stat">
               <FontAwesomeIcon icon={faDollarSign} className="icon" color="#DBA362"/>
-              <span className="value">$17,432</span>
+              <span className="value">Ksh 17,432</span>
               <span className="label">Cost</span>
             </div>
           </div>
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
             </div>
             <div className="stat">
               <FontAwesomeIcon icon={faDollarSign} className="icon" color="#58D365"/>
-              <span className="value">$13,573</span>
+              <span className="value">Ksh 13,573</span>
               <span className="label">Cost</span>
             </div>
             <div className="stat">
@@ -95,7 +95,7 @@ const Home: React.FC = () => {
             </div>
             <div className="stat">
               <FontAwesomeIcon icon={faUndo} className="icon" color="#817AF3"/>
-              <span className="value">$17,432</span>
+              <span className="value">Ksh 17,432</span>
               <span className="label">Return</span>
             </div>
           </div>
@@ -164,19 +164,19 @@ const Home: React.FC = () => {
                 <td>Surgar</td>
                 <td>30</td>
                 <td>12</td>
-                <td>$100</td>
+                <td>Ksh10000</td>
               </tr>
               <tr>
                 <td>Bread</td>
                 <td>21</td>
                 <td>15</td>
-                <td>$207</td>
+                <td>Ksh 20000</td>
               </tr>
               <tr>
                 <td>Arimis</td>
                 <td>19</td>
                 <td>17</td>
-                <td>$105</td>
+                <td>Ksh 15000</td>
               </tr>
             </tbody>
           </table>
