@@ -70,7 +70,7 @@ import ManageUsers from "./pages/ManageUsers";
 import ManageStorePage from "./pages/ManageStorePage";
 import Order from "./pages/Order";
 import Payment from "./pages/Payment";
-// import Product from "./pages/Product";
+import Product from "./pages/Product";
 import Settings from "./pages/Settings";
 import Statistic from "./pages/Statistic";
 import styles from "./App.module.css";
@@ -89,7 +89,7 @@ const App: React.FC = () => {
               <Route path="/manage-users" element={<ManageUsers />} />
               <Route path="/order" element={<Order />} />
               <Route path="/payment" element={<Payment />} />
-              {/* <Route path="/product" element={<Product />} /> */}
+              <Route path="/product" element={<Product />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/statistic" element={<Statistic />} />
             </Routes>

@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  
+
 }
 
 .logo {
@@ -45,7 +47,6 @@
 /* App.module.css */
 .app {
   display: flex;
-  font-family: Arial, sans-serif;
   min-width: 100vw;
   min-height: 100vh;
 }

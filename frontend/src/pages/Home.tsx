@@ -94,7 +94,7 @@ const Home: React.FC = () => {
               <span className="label">Cancel</span>
             </div>
             <div className="stat">
-              <FontAwesomeIcon icon={faUndo} className="icon" color="#817AF3"/>
+              <FontAwesomeIcon icon={faUndo} className="icon" color="#17a2b8"/>
               <span className="value">Ksh 17,432</span>
               <span className="label">Return</span>
             </div>
