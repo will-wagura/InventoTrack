@@ -1,0 +1,25 @@
+/* src/components/Layout.css */
+.layout {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex; /* Ensures that the content and sidebar are side by side */
+  }
+  
+  .content-area {
+    flex: 1;
+    margin-left: 250px; /* Same width as sidebar */
+    padding: 20px;
+    background-color: #f0f0f0; /* Adjust as needed */
+  }
+  
+  footer {
+    margin-left: 250px; /* Same width as sidebar */
+    padding: 20px;
+    background-color: #ffffff; /* Adjust as needed */
+  }
+  

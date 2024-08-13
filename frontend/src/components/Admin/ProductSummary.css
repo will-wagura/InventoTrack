@@ -1,0 +1,17 @@
+.product-summary {
+  background-color: #00c4cc; /* Matches the teal color */
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+}
+
+.product-summary h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.product-summary p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}

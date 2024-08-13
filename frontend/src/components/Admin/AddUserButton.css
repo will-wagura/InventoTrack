@@ -1,0 +1,20 @@
+.add-user {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .add-user-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-user-btn:hover {
+    opacity: 0.9;
+  }
+  
+  
