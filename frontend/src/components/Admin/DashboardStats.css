@@ -1,0 +1,42 @@
+/* src/components/DashboardStats.css */
+.dashboard-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  flex: 1;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.stat:last-child {
+  margin-right: 0;
+}
+
+.stat img {
+  margin-right: 10px;
+}
+
+.stat div {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.stat p {
+  margin: 5px 0;
+}
+
+.stat span {
+  color: green;
+}
