@@ -178,6 +178,7 @@ input[type="search"],
 }
 
 /* Header styles */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -194,7 +195,7 @@ input[type="search"],
   border-radius: 20px;
   border: 1px solid #ced4da;
   width: 300px;
-}
+} 
 
 .user-info {
   display: flex;
@@ -220,6 +221,20 @@ input[type="search"],
 }
 
 /* Store list styles */
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 10;
+ 
+}
+
+
 .store-list {
   background-color: white;
   padding-top: 20px;

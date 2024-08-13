@@ -2,7 +2,7 @@
   padding: 20px;
   /* min-height: 100vh;  */
   box-sizing: border-box;
-    color: #333;
+  color: #333;
   margin-bottom: 100px;
 }
 
@@ -12,11 +12,15 @@
   align-items: center;
   border-bottom: 2px solid #ccc;
   padding-bottom: 10px;
+  
   position: sticky;
   top: 0;
   background-color: #fff;
   z-index: 10;
+ 
 }
+
+
 
 .settings-header h1 {
   margin: 0;
@@ -49,12 +53,10 @@
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  
 }
 
 .settings-section h2 svg {
   margin-right: 10px;
-  
 }
 .settings-form input,
 .settings-form select {
@@ -91,7 +93,6 @@
 /* Make the save button stand out more */
 .settings-form .btn-primary {
   margin-top: 20px;
-  
 }
 
 input[type="text"],
@@ -112,7 +113,6 @@ input[type="password"]:focus,
 select:focus {
   border-color: #007bff;
   outline: none;
- 
 }
 
 button {

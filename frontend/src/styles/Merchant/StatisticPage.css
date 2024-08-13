@@ -4,6 +4,16 @@
   border-radius: 8px;
   color: #333;
 }
+
+.statistics-header {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  position: sticky;
+  background-color: #fff;
+  z-index: 10;
+}
+
+
 .statistics-content h1 {
 
   color: #00bfa5;

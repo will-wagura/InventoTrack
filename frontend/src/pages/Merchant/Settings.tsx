@@ -94,10 +94,12 @@ const AccountSettings: React.FC = () => {
 
 const Settings: React.FC = () => {
     return (
-        <div className="settings-page">
-            <header className="settings-header">
+        <div className="settings">
+             <header className="settings-header">
                 <h1>Settings</h1>
             </header>
+        <div className="settings-page">
+           
             <section className="settings-content">
                 <div className="settings-section general-settings">
                     <h2><FaUserCog /> General Settings</h2>
@@ -112,6 +114,7 @@ const Settings: React.FC = () => {
                     <AccountSettings />
                 </div>
             </section>
+        </div>
         </div>
     );
 };

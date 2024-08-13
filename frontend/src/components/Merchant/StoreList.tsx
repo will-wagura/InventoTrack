@@ -69,7 +69,10 @@ const StoreList: React.FC = () => {
   };
 
   return (
+    
+      
     <div className="store-list">
+    
       <button className="add-store" onClick={handleAddStoreClick}>Add Store</button>
       
       {isAdding && (
@@ -147,6 +150,7 @@ const StoreList: React.FC = () => {
         </div>
       ))}
     </div>
+   
   );
 };
 

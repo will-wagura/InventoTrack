@@ -15,10 +15,13 @@ const data = [
 
 const Statistics: React.FC = () => {
   return (
+    <div className="statistics">
+       <header className="statistics-header">
+                <h1>Overview</h1>
+            </header>
     <div className="statistics-content">
-      <div className="statistics-header">
-        <h1>Overview</h1>
-      </div>
+       
+      
       <div className="overview-section">
         <div className="overview-card">
           <h4>Total Profit</h4>
@@ -146,6 +149,7 @@ const Statistics: React.FC = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   );
 };

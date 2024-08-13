@@ -10,7 +10,7 @@ import ManageUsers from "./pages/Merchant/ManageUsers";
 import ManageStorePage from "./pages/Merchant/ManageStorePage";
 import Order from "./pages/Merchant/Order";
 
-import Product from "./pages/Merchant/Product";
+import Products from "./pages/Merchant/Products";
 import Settings from "./pages/Merchant/Settings";
 import Statistic from "./pages/Merchant/Statistic";
 import styles from "./App.module.css";
@@ -29,7 +29,7 @@ const App: React.FC = () => {
               <Route path="/manage-users" element={<ManageUsers />} />
               <Route path="/order" element={<Order />} />
 
-              <Route path="/product" element={<Product />} />
+              <Route path="/products" element={<Products />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/statistic" element={<Statistic />} />
             </Routes>

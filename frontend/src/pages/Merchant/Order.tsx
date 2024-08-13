@@ -49,8 +49,12 @@ const averageOrderValueData = [
 
 const Order: React.FC = () => {
   return (
+    <div className="order">
+       <header className="order-header">
+                <h1>Order Analystics</h1>
+            </header>
     <div className="order-page">
-      <h1>Order Analytics</h1>
+     
       
       <div className="chart-row">
         <div className="chart-container">
@@ -67,7 +71,7 @@ const Order: React.FC = () => {
                 dataKey="value"
                 label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
               >
-                {orderStatusData.map((entry, index) => (
+                {orderStatusData.map((_entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
@@ -89,7 +93,7 @@ const Order: React.FC = () => {
                 dataKey="value"
                 label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
               >
-                {paymentMethodData.map((entry, index) => (
+                {paymentMethodData.map((_entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
@@ -126,7 +130,7 @@ const Order: React.FC = () => {
                 dataKey="value"
                 label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
               >
-                {customerTypeData.map((entry, index) => (
+                {customerTypeData.map((_entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
@@ -149,6 +153,7 @@ const Order: React.FC = () => {
           </ResponsiveContainer>
         </div>
       </div>
+    </div>
     </div>
   );
 };

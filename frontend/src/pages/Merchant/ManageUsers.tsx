@@ -68,8 +68,12 @@ const ManageUsers: React.FC = () => {
   };
 
   return (
+    <div className="users">
+         <header className="users-header">
+                <h1>Manage User</h1>
+            </header>
     <div className="manage-users">
-      <h2>Manage Users</h2>
+   
 
       <div className="add-admin">
         <h3>Add New Admin</h3>
@@ -110,6 +114,7 @@ const ManageUsers: React.FC = () => {
           ))}
         </ul>
       </div>
+    </div>
     </div>
   );
 };

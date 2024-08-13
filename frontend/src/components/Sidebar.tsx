@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
   const [activeItem, setActiveItem] = useState('');
   const menuItems = [
     { icon: <FiHome />, name: 'Home', path: '/'},
-    { icon: <IoFileTrayOutline />, name: 'Product', path: '/product' },
+    { icon: <IoFileTrayOutline />, name: 'Products', path: '/products' },
     { icon: <FiBriefcase />, name: 'Order', path: '/order' },
     // { icon: <IoMdCard />, name: 'Payment', path: '/payment' },
     { icon: <FaChartLine />, name: 'Statistic', path: '/statistic' },
