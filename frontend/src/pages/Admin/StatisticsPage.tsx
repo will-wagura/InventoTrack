@@ -1,11 +1,11 @@
 // StatisticPage.tsx
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import StatisticsHeader from '../components/StatisticsHeader';
-import OverviewCard from '../components/OverviewCards';
-import ProfitRevenueChart from '../components/ProfitRevenueChart';
-import BestSellingCategory from '../components/BestSellingCategory';
-import BestSellingProductTable from '../components/BestSellingProductTable';
+import StatisticsHeader from '../../components/Admin/StatisticsHeader';
+import OverviewCard from '../../components/Admin/OverviewCards';
+import ProfitRevenueChart from '../../components/Admin/ProfitRevenueChart';
+import BestSellingCategory from '../../components/Admin/BestSellingCategory';
+import BestSellingProductTable from '../../components/Admin/BestSellingProductTable';
 import './StatisticPage.css'; 
 
 const StatisticPage: React.FC = () => {

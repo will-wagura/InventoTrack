@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './PaymentPage.css';
-import PaymentHeader from '../components/PaymentHeader';
-import PaymentTable from '../components/PaymentTable';
-import PaymentPreviewProduct from '../components/PaymentPreviewProduct';
+import PaymentHeader from '../../components/Admin/PaymentHeader';
+import PaymentTable from '../../components/Admin/PaymentTable';
+import PaymentPreviewProduct from '../../components/Admin/PaymentPreviewProduct';
+
 
 interface Product {
   id: string;

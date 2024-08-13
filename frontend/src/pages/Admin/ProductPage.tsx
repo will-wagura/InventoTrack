@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './ProductPage.css';
-import ProductHeader from '../components/ProductHeader';
-import ProductList from '../components/ProductList';
-import ProductDetailsPreview from '../components/ProductPreview';
-import Filters from '../components/Filters';
+import ProductHeader from '../../components/Admin/ProductHeader';
+import ProductList from '../../components/Admin/ProductList';
+import ProductDetailsPreview from '../../components/Admin/ProductPreview';
+import Filters from '../../components/Admin/Filters';
 
 const ProductPage: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);

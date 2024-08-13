@@ -73,10 +73,9 @@
   border-left: 1px solid #ccc;
   background-color: #f9f9f9;
   overflow-y: auto;
-  z-index: 1; /* Ensure it appears above other content */
+  z-index: 1;
 }
 
-/* Ensure content is not obstructed by right-section */
 body {
-  margin-right: 374px; /* Offset content by the width of the right-section */
+  margin-right: 37px;
 }

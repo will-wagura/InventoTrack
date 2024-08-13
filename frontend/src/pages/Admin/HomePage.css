@@ -63,10 +63,9 @@
     overflow-y: auto;
     z-index: 1;
     margin-left: -20px;
-    height: auto; /* Adjust height if needed */
+    height: auto;
 }
 
-/* Additional styling for user info, inbox, top-selling products, etc. */
 .user-info {
     display: flex;
     align-items: center;

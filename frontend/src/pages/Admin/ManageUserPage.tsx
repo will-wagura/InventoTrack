@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import UserList from '../components/UserList';
-import AddUserButton from '../components/AddUserButton';
+import UserList from '../../components/Admin/UserList';
+import AddUserButton from '../../components/Admin/AddUserButton';
 import './ManageUserPage.css';
+
 
 const ManageUserPage: React.FC = () => {
   const [users, setUsers] = useState([

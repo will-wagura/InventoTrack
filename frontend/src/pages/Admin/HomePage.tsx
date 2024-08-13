@@ -1,12 +1,11 @@
 import React from 'react';
-import DashboardHeader from '../components/HomeHeader';
-import DashboardStats from '../components/DashboardStats';
-import DashboardCharts from '../components/DashboardCharts';
-import RecentOrder from '../components/RecentOrder';
-import LowStock from '../components/LowStock';
-import RightSection from '../components/RightSection';
-import './HomePage.css'; // Import the CSS file
-
+import DashboardHeader from '../../components/Admin/HomeHeader';
+import DashboardStats from '../../components/Admin/DashboardStats';
+import DashboardCharts from '../../components/Admin/DashboardCharts';
+import RecentOrder from '../../components/Admin/RecentOrder';
+import LowStock from '../../components/Admin/LowStock';
+import RightSection from '../../components/RightSection';
+import './HomePage.css';
 const HomePage: React.FC = () => {
   return (
     <>

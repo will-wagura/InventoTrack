@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import OrderList from '../components/OrderList';
-import OrderDetail from '../components/OrderDetail';
-import OrderFilter from '../components/OrderFilter';
+import OrderList from '../../components/Admin/OrderList';
+import OrderDetail from '../../components/Admin/OrderDetail';
+import OrderFilter from '../../components/Admin/OrderFilter';
 import './OrderPage.css';
 
 const OrderPage: React.FC = () => {
