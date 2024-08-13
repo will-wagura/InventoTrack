@@ -25,7 +25,7 @@
     background-color: #fff;
   }
   
-  .add-item-btn {
+  /* .add-item-btn {
     padding: 10px 20px;
     background-color: #28a745;
     color: white;
@@ -33,7 +33,7 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+   */
 
   .product-table-container {
     overflow-x: auto;
@@ -104,6 +104,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
   }
   
   .product-image {

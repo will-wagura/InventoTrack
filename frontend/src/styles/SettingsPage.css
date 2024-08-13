@@ -1,0 +1,136 @@
+.settings-page {
+  padding: 20px;
+  /* min-height: 100vh;  */
+  box-sizing: border-box;
+    color: #333;
+  margin-bottom: 100px;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.settings-header h1 {
+  margin: 0;
+  position: relative;
+  left: 42.5%;
+}
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.settings-section {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.settings-section h2 svg {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.settings-form input,
+.settings-form select {
+  margin-bottom: 20px; /* Increase space between form elements */
+  display: block; /* Ensure each element is on a new line */
+  width: 100%; /* Make inputs and selects full width */
+}
+
+.settings-form h3 {
+  margin-bottom: 10px; /* Add space below headings */
+  color: #888; /* Change color to match "Enter site title" placeholder */
+}
+
+.settings-form select {
+  color: #888; /* Change dropdown text color */
+}
+
+/* Style for placeholder text */
+.settings-form input::placeholder,
+.settings-form select option:first-child {
+  color: #888;
+}
+
+/* Ensure the selected option text is visible */
+.settings-form select option {
+  color: black;
+}
+
+/* Add some padding to the form for better spacing */
+.settings-form {
+  padding: 20px;
+}
+
+/* Make the save button stand out more */
+.settings-form .btn-primary {
+  margin-top: 20px;
+  
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #27d8c3;
+}
+
+.btn-primary:hover {
+  background-color: #218872;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+}

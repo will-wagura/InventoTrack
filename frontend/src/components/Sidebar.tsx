@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import styles from '../styles/Sidebar.module.css';
 import {  FaChartLine } from 'react-icons/fa';
 import { FiHome, FiBriefcase } from "react-icons/fi";
@@ -10,7 +10,8 @@ import { MdManageAccounts } from "react-icons/md";
 import { HiOutlineCog } from "react-icons/hi";
 
 const Sidebar: React.FC = () => {
-  const [activeItem, setActiveItem] = useState('Manage Store');
+  const location = useLocation();
+  const [activeItem, setActiveItem] = useState('');
   const menuItems = [
     { icon: <FiHome />, name: 'Home', path: '/'},
     { icon: <IoFileTrayOutline />, name: 'Product', path: '/product' },
@@ -21,6 +22,15 @@ const Sidebar: React.FC = () => {
     { icon: <MdManageAccounts />, name: 'Manage Users', path: '/manage-users' },
     { icon: <HiOutlineCog />, name: 'Settings', path: '/settings' },
   ];
+
+  useEffect(() => {
+    const currentItem = menuItems.find(item => item.path === location.pathname);
+    if (currentItem) {
+      setActiveItem(currentItem.name);
+    }
+  }, [location]);
+
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logo}>
