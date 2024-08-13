@@ -10,7 +10,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   LineChart, Line, ResponsiveContainer
 } from 'recharts';
-import "../styles/HomePage.css";
+import "../../styles/Merchant/HomePage.css";
 
 const salesPurchaseData = [
   { name: 'Oct', Purchase: 50000, Sales: 40000 },

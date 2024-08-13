@@ -1,7 +1,7 @@
 import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-import "../styles/StatisticPage.css";
+import "../../styles/Merchant/StatisticPage.css";
 
 const data = [
   { name: 'Sep', revenue: 40000, profit: 24000 },
@@ -17,7 +17,7 @@ const Statistics: React.FC = () => {
   return (
     <div className="statistics-content">
       <div className="statistics-header">
-        <h3>Overview</h3>
+        <h1>Overview</h1>
       </div>
       <div className="overview-section">
         <div className="overview-card">

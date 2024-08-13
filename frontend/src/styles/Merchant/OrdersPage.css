@@ -41,7 +41,8 @@
     
   }
   h1 {
-color: #27D8C3;
+color: #00bfa5;
+font-weight: 900;
   }
   
   @media (max-width: 768px) {

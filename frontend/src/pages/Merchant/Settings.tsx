@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/SettingsPage.css';
+import '../../styles/Merchant/SettingsPage.css';
 import { FaUserCog, FaLock, FaUser } from 'react-icons/fa';
 
 // General Settings Component

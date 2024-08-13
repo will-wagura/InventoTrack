@@ -1,11 +1,11 @@
 .statistics-content {
-  padding: 20px;
+  padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
   color: #333;
 }
-.statistics-content h3 {
-  font-size: 30px;
+.statistics-content h1 {
+
   color: #00bfa5;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@
 .overview-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -26,7 +26,7 @@
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 15px;
+  padding: 4px;
   flex: 1 1 150px;
   text-align: center;
 }
@@ -41,10 +41,7 @@
   margin-bottom: 20px;
 }
 
-.best-selling-category h4 {
-  color: #333;
-  font-weight: 400;
-}
+
 
 table {
   width: 100%;
@@ -65,8 +62,7 @@ td {
 }
 
 .overview-section h4 {
-  font-weight: 600;
-  color: #000000;
+ 
   margin-bottom: 15px;
 }
 

@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from "react";
-import "../styles/ManageUsers.css";
+import "../../styles/Merchant/ManageUsers.css";
 
 interface Admin {
   id: number;
