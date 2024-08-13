@@ -367,7 +367,7 @@ const Product: React.FC = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-input"
         />
-        <button className="add-item-btn">Add Item</button>
+        
       </div>
       <div className="product-table-container">
         <table className="product-table">

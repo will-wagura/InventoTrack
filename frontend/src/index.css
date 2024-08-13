@@ -67,6 +67,28 @@ button:focus-visible {
 
 input{color: grey;}
 
+/* For webkit-based browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 20px; /* Reduced width of the vertical scrollbar */
+  height: 5px; /* Reduced height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27D8C3;
+  border-radius: 2px; /* Rounded corners for the thumb */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #27D8C3 transparent;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

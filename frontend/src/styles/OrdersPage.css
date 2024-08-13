@@ -40,6 +40,9 @@
     margin-bottom: 20px;
     
   }
+  h1 {
+color: #27D8C3;
+  }
   
   @media (max-width: 768px) {
     .chart-row {

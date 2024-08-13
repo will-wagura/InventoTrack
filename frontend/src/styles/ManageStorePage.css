@@ -1,4 +1,3 @@
-
 .manage-store-page {
   display: flex;
   background-color: #f8f9fa; /* Light grey background for the whole page */
@@ -17,9 +16,10 @@
   width: 300px;
   background-color: #ffffff;
   padding: 20px;
-  border-left: 1px solid #e0e0e0;
+  border-left: 1px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  color: #333
+  color: #333;
 }
 
 /* Inbox.css */
@@ -31,6 +31,9 @@
   padding: 10px;
   border-radius: 5px;
   background-color: #f8f9fa;
+  max-height: 300px;
+  overflow-y: auto;
+  
 }
 
 .inbox h3 {
@@ -40,7 +43,6 @@
 }
 
 .message {
-
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
@@ -63,7 +65,7 @@
 }
 
 .unread {
-  background-color: #27D8C3;
+  background-color: #27d8c3;
   border-radius: 5px;
 }
 
@@ -72,29 +74,81 @@
 }
 /*Search bar and notification bell*/
 
-input[type="search"], .search-bar {
+input[type="search"],
+.search-bar {
   background-color: #f8f9fa; /* Light grey color */
   color: #333; /* Text color */
   border: 1px solid #ccc; /* Optional: adjust the border color */
 }
 
-.inbox-header{
-display: flex;
-
+.inbox-header {
+  display: flex;
 }
 .search-bar {
-  flex: 1;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 14px;
+  margin-top: 25px;
+  width: 95%;
 }
 
 .notification-bell {
-  margin-left: 10px;
-  font-size: 30px;
+  position: relative;
+  left: 90px;
+
+  font-size: 35px;
   cursor: pointer;
 }
+
+/*Chat Box*/
+/* .chat-app {
+  display: flex;
+  height: 100vh;
+  color: #000;
+}
+
+.inbox-container {
+  width: 30%;
+  border-right: 1px solid #ccc;
+}
+
+.chat-box {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-window {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sent {
+  background-color: #e6f3ff;
+  align-self: flex-end;
+}
+
+.received {
+  background-color: #f0f0f0;
+  align-self: flex-start;
+}
+
+.active {
+  background-color: #e6f3ff;
+} */
 
 /* AdminActivity.css */
 .admin-activity {
@@ -122,7 +176,6 @@ display: flex;
   font-size: 14px;
   color: #555;
 }
-
 
 /* Header styles */
 .header {
@@ -155,15 +208,13 @@ display: flex;
   margin-right: 10px;
 }
 
-
-
 .name {
   color: #495057 !important;
   font-weight: bold;
 }
 
 .title {
-  color: #27D8C3 !important;
+  color: #27d8c3 !important;
 }
 
 /* Store list styles */
@@ -174,12 +225,12 @@ display: flex;
   padding-right: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 700px; 
-  overflow-y: auto; 
+  height: 700px;
+  overflow-y: auto;
 }
 
 .add-store {
-  background-color: #27D8C3;
+  background-color: #27d8c3;
   color: white;
   border: none;
   border-radius: 5px;
@@ -209,8 +260,9 @@ display: flex;
 
 .store-info h3 {
   margin: 0;
-  color: #17a2b8;
+  color: #495057;
   font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .store-info p {
@@ -220,7 +272,7 @@ display: flex;
 
 .edit-store {
   background-color: white;
-  color: #27D8C3;
+  color: #27d8c3;
   border: 1px solid #ced4da;
   border-radius: 5px;
   padding: 8px 15px;
@@ -228,7 +280,7 @@ display: flex;
 }
 
 .input-field {
-  width: 100%;
+  width: 70%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ced4da;
@@ -237,7 +289,7 @@ display: flex;
 }
 
 .save-store {
-  background-color: #58D365;
+  background-color: #58d365;
   color: white;
   border: none;
   border-radius: 5px;
@@ -245,42 +297,6 @@ display: flex;
   cursor: pointer;
 }
 
-
-/* Light Theme */
-/* body.light {
-  --background-color: #ffffff;
-  --text-color: #000000;
-  --sidebar-background: #f0f0f0;
-  --button-background: #f0f0f0;
-  --button-text: #000000;
-} */
-
-/* Dark Theme */
-/* body.dark {
-  --background-color: #121212;
-  --text-color: #ffffff;
-  --sidebar-background: #333333;
-  --button-background: #333333;
-  --button-text: #ffffff;
-} */
-
-/* General Theme-Related Styles */
-/* body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+.store-list button:hover {
+  background-color: #218872;
 }
-
-.right-sidebar {
-  background-color: var(--sidebar-background);
-}
-.theme-toggle {
-  background-color: var(--button-background);
-  color: var(--button-text);
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.theme-toggle:hover {
-  opacity: 0.8;
-} */

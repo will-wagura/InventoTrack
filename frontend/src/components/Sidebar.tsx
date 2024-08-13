@@ -5,7 +5,7 @@ import styles from '../styles/Sidebar.module.css';
 import {  FaChartLine } from 'react-icons/fa';
 import { FiHome, FiBriefcase } from "react-icons/fi";
 import { IoStorefrontOutline, IoFileTrayOutline  } from "react-icons/io5";
-import { IoMdCard } from "react-icons/io";
+// import { IoMdCard } from "react-icons/io";
 import { MdManageAccounts } from "react-icons/md";
 import { HiOutlineCog } from "react-icons/hi";
 
@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
     { icon: <FiHome />, name: 'Home', path: '/'},
     { icon: <IoFileTrayOutline />, name: 'Product', path: '/product' },
     { icon: <FiBriefcase />, name: 'Order', path: '/order' },
-    { icon: <IoMdCard />, name: 'Payment', path: '/payment' },
+    // { icon: <IoMdCard />, name: 'Payment', path: '/payment' },
     { icon: <FaChartLine />, name: 'Statistic', path: '/statistic' },
     { icon: <IoStorefrontOutline />, name: 'Manage Store', path: '/manage-store' },
     { icon: <MdManageAccounts />, name: 'Manage Users', path: '/manage-users' },
