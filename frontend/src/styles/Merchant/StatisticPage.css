@@ -1,0 +1,83 @@
+.statistics-content {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  color: #333;
+}
+
+.statistics-header {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  position: sticky;
+  background-color: #fff;
+  z-index: 10;
+}
+
+
+.statistics-content h1 {
+
+  color: #00bfa5;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 20px;
+  left: 42.5%;
+  font-weight: 900;
+}
+
+.overview-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.overview-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 4px;
+  flex: 1 1 150px;
+  text-align: center;
+}
+
+.best-selling-category,
+.profit-revenue-chart,
+.best-selling-product {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #e0e0e0;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+.overview-section h4 {
+ 
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .overview-section {
+    flex-direction: column;
+  }
+}

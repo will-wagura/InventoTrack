@@ -1,0 +1,34 @@
+.order-filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.order-filter-label {
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    margin-right: 10px;
+}
+
+.order-filter-select {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    color: #d0f1f5; /* Light text color */
+    background-color: #26dbc9; /* Matching background color */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.order-filter-select:hover {
+    background-color: #1bc2b3;
+}
+
+.order-filter-select:focus {
+    outline: none;
+    color: #ffffff; /* White text on focus */
+}

@@ -1,0 +1,14 @@
+.manage-user-page {
+    padding: 20px;
+    background-color: #f4f5f7;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .manage-user-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+  

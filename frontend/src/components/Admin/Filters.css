@@ -1,0 +1,19 @@
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  background-color: #00c4cc; /* Matches the teal color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #00b3bb; /* Slightly darker for hover effect */
+}
