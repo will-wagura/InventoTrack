@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import Sidebar from "./components/Sidebar";
-import ItemEntry from "./components/ItemEntry";
-import StockInformation from "./components/StockInformation";
-import SupplyRequests from "./components/SupplyRequests";
-import Home from "./components/Home";
-import Inbox from "./components/inbox";
+import Sidebar from "./components/clerk/Sidebar";
+import ItemEntry from "./components/clerk/ItemEntry";
+import StockInformation from "./components/clerk/StockInformation";
+import SupplyRequests from "./components/clerk/SupplyRequests";
+import Home from "./components/clerk/Home";
+import Inbox from "./components/clerk/inbox";
 import Footer from "./components/footer";
 import ContactUs from "./components/ContactUs";
 import AboutUs from "./components/AboutUs";
