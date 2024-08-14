@@ -1,11 +1,60 @@
 [[source]]
+name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-name = "pypi"
-
-[packages]
-
-[dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "3.12"
+
+[packages]
+alembic = "*"
+bcrypt = "*"
+bidict = "*"
+blinker = "*"
+cffi = "*"
+click = "*"
+cryptography = "*"
+dnspython = "*"
+email_validator = "*"
+Flask = "*"
+Flask-Bcrypt = "*"
+Flask-Cors = "*"
+Flask-JWT-Extended = "*"
+Flask-Login = "*"
+Flask-Mail = "*"
+Flask-Migrate = "*"
+Flask-Principal = "*"
+Flask-Security-Too = "*"
+Flask-SocketIO = "*"
+Flask-SQLAlchemy = "*"
+Flask-WTF = "*"
+greenlet = "*"
+h11 = "*"
+idna = "*"
+importlib_resources = "*"
+iniconfig = "*"
+itsdangerous = "*"
+Jinja2 = "*"
+Mako = "*"
+MarkupSafe = "*"
+packaging = "*"
+passlib = "*"
+pillow = "*"
+pip-review = "*"
+pluggy = "*"
+pycparser = "*"
+PyJWT = "*"
+pytest = "*"
+python-dotenv = "*"
+python-engineio = "*"
+python-socketio = "*"
+pytz = "*"
+setuptools = "*"
+simple-websocket = "*"
+SQLAlchemy = "*"
+typing_extensions = "*"
+Werkzeug = "*"
+wsproto = "*"
+WTForms = "*"
+
+[dev-packages]
