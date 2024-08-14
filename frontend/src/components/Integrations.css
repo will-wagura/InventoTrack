@@ -1,0 +1,69 @@
+/* src/components/Integrations.css */
+.integrations {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .integrations h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .integrations > p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 50px;
+  }
+  
+  .integration-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .integration-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    width: 250px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .integration-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .integration-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .integration-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  
+  .cta-button {
+    background-color: white;
+    color: #667eea;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }

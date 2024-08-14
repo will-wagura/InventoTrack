@@ -1,0 +1,79 @@
+/* src/components/PopupBuilder.css */
+.popup-builder {
+    background-color: #f4f7fc;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .popup-builder h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .popup-builder p {
+    color: #34495e;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  
+  .builder-demo {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  
+  .builder-controls, .popup-preview {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .builder-controls h3, .popup-preview h3 {
+    color: #3498db;
+    margin-bottom: 20px;
+  }
+  
+  .builder-controls label {
+    display: block;
+    margin-bottom: 15px;
+    color: #2c3e50;
+  }
+  
+  .builder-controls input, .builder-controls textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+  
+  .builder-controls button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .builder-controls button:hover {
+    background-color: #2980b9;
+  }
+  
+  .preview-area {
+    height: 300px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bdc3c7;
+    font-size: 1.2em;
+  }

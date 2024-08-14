@@ -1,3 +1,4 @@
+
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
@@ -15,8 +16,10 @@ import Settings from "./pages/Merchant/Settings";
 import Statistic from "./pages/Merchant/Statistic";
 import styles from "./App.module.css";
 
+
 const App: React.FC = () => {
   return (
+
     <Router>
       <div className={styles.container}>
         <div className={styles.app}>
@@ -47,3 +50,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+

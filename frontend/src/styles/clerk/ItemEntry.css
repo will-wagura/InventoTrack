@@ -1,0 +1,93 @@
+.item-entry {
+  background-color: #ffffff;
+  padding: 30px;
+  margin: 20px auto; /* Center horizontally */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px; /* Increased the max-width to make the form wider */
+}
+
+.item-entry h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+}
+
+.item-entry form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.item-entry input,
+.item-entry select {
+  width: 80%;
+  max-width: 500px; /* Maximum width for the select boxes */
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #f5f5f5; /* Light background color */
+  color: #333; /* Text color */
+}
+
+.item-entry button {
+  padding: 12px;
+  width: 50%;
+  max-width: 200px;
+  background-color: #00bfa5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.item-entry button:hover {
+  background-color: #008f7a;
+}
+
+.item-entry .quantity-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+}
+
+.item-entry .quantity-container input {
+  flex: 1;
+  margin-right: 10px; /* Space between the quantity input and the unit dropdown */
+}
+
+.item-entry .quantity-container select {
+  width: 100px; /* Fixed width for the dropdown */
+}
+.item-entry .quantity-container,
+.item-entry .price-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  margin-bottom: 15px;
+}
+
+.item-entry .quantity-container input,
+.item-entry .price-container input {
+  flex: 1;
+  margin-right: 10px; /* Space between the input and the dropdown */
+}
+
+.item-entry .quantity-container select,
+.item-entry .price-container select {
+  width: 100px; /* Fixed width for the dropdown */
+}
+
+.success-message {
+  color: #00bfa5;
+  margin-top: 10px;
+  font-weight: bold;
+}
