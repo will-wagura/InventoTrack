@@ -1,0 +1,78 @@
+.user-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .user-info {
+    flex: 1;
+  }
+  
+  .user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user-role {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .user-status {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  .user-status.active {
+    color: #4a614b;
+  }
+  
+  .user-status.deactivated {
+    color: #ff4d4d;
+  }
+  
+  .user-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .deactivate-btn, .activate-btn, .delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .deactivate-btn {
+    background-color: #ffcc00;
+    color: #333;
+  }
+  
+  .activate-btn {
+    background-color: #050505;
+    color: #fff;
+  }
+  
+  .delete-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+  }
+  
+  .deactivate-btn:hover, .activate-btn:hover, .delete-btn:hover {
+    opacity: 0.9;
+  }
+  

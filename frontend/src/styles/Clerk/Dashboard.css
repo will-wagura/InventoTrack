@@ -1,0 +1,42 @@
+.dashboard {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .item-entry,
+  .stock-information,
+  .supply-requests {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item-entry {
+    max-width: 500px;
+  }
+  
+  .stock-information {
+    max-width: 800px;
+  }
+  
+  .supply-requests {
+    max-width: 700px;
+  }
+  
+  .dashboard {
+    padding: 20px;
+  }
+  
+  .charts {
+    margin-top: 20px;
+  }
+  
+  .chart-container {
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  

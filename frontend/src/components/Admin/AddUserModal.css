@@ -1,0 +1,59 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  .modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .modal-content input,
+  .modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content button {
+    padding: 10px 20px;
+    margin: 10px;
+  }
+  
+  .close-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .close-btn:hover {
+    opacity: 0.9;
+  }
+  
+  .modal-content img.profile-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 50%;
+  }
+  

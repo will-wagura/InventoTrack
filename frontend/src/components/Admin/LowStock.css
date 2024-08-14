@@ -1,0 +1,44 @@
+/* Low Quantity Stock Section */
+.low-stock {
+  background: #fff;
+  padding: 25px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-left: 0; /* Keep aligned with the container */
+  margin-right: 190px; /* Extend slightly to the right */
+  width: calc(100% + 20px); /* Extend width slightly to match the right margin adjustment */
+}
+
+
+.low-stock h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.low-stock table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.low-stock th, .low-stock td {
+  padding: 10px 15px;  /* Added padding for spacing */
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.low-stock .low-stock-badge {
+  color: red;
+  font-weight: bold;
+  margin-left: 10px;
+}

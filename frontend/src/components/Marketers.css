@@ -1,0 +1,94 @@
+/* src/components/Marketers.css */
+.marketers {
+    background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    color: #333;
+    padding: 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.marketers h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+}
+
+.marketers p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #5a5a5a;
+}
+
+.marketer-tools {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tool {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    width: 280px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool:hover {
+    transform: translateY(-10px) rotateZ(2deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.tool h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #ff6b6b;
+}
+
+.tool p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.cta-button {
+    background-color: #4ecdc4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #45b7aa;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .marketers h1 {
+        font-size: 2.2rem;
+    }
+
+    .marketer-tools {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tool {
+        width: 100%;
+        max-width: 280px;
+    }
+}

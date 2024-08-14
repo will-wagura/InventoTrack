@@ -57,6 +57,6 @@
 
 .contentWrapper {
   display: flex;
-  flex: 1; /* Ensures the content wrapper takes up the remaining height */
+  flex: 1; 
 }
 

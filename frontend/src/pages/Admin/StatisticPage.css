@@ -1,0 +1,32 @@
+/* StatisticPage.css */
+
+.statistic-page {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.overview .col-md-4 {
+  margin-bottom: -270px;
+  margin-left: 10px;
+  margin-right: 600px;
+  margin-top:2%;
+ 
+}
+
+.charts {
+  margin-top: 20px;
+}
+
+.product-table {
+  margin-top: 20px;
+}
+
+.best-selling-category {
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-left:650px;
+  margin-bottom: 0%;
+
+  position:relative;
+}
+
