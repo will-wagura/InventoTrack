@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 // import React, { useState, useEffect } from "react";
 // import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 // import Sidebar from "./components/Merchant/Sidebar";
@@ -339,6 +340,15 @@ import Footer from "./components/Merchant/Footer";
 import Header from "./components/Merchant/Header";
 import Inbox from "./components/Merchant/Inbox";
 import AdminActivity from "./components/Merchant/AdminActivity";
+=======
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Inbox from "./components/Inbox";
+import AdminActivity from "./components/AdminActivity";
+>>>>>>> 28f47f84ffbec8cbf831c5214112643810d4ff81
 import Home from "./pages/Merchant/Home";
 import ManageUsers from "./pages/Merchant/ManageUsers";
 import ManageStorePage from "./pages/Merchant/ManageStorePage";
@@ -366,6 +376,7 @@ import styles from "./App.module.css";
 import { Item } from "./types/Item";
 import SidebarClerk from "./components/Clerk/SidebarClerk";
 
+
 const App: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [activeComponent, setActiveComponent] = useState("home");
@@ -383,6 +394,7 @@ const App: React.FC = () => {
   };
 
   return (
+
     <Router>
       <Routes>
         <Route path="/merchant/*" element={
@@ -460,3 +472,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+

@@ -1,5 +1,9 @@
 .overview-container {
+<<<<<<< HEAD
   background-color:rgb(255, 255, 255);
+=======
+  background-color:white;
+>>>>>>> 28f47f84ffbec8cbf831c5214112643810d4ff81
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
@@ -8,7 +12,10 @@
   margin-right: 100px;
   margin-left: -10px;
   position:static;
+<<<<<<< HEAD
   margin-top: 0px;
+=======
+>>>>>>> 28f47f84ffbec8cbf831c5214112643810d4ff81
 }
 
 .overview-header {
