@@ -223,4 +223,4 @@ def delete_user(id):
 
 @users_routes.route("/test", methods=["GET"])
 def test():
-    return jsonify({"message": "Test route, shows API is working fine"}), 200
+    return jsonify({"message": "Test route, InventoTrack API is working fine"}), 200
