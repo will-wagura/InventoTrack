@@ -1,0 +1,25 @@
+.product-preview {
+  background-color: #08e0c7;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: -4%;
+  margin-left:0%;
+  font-family: Arial, sans-serif;
+  width: 20%;
+  top: 0; 
+  right: 0; 
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.product-preview .product-image {
+  width: 100px;
+  height: 100px;
+  margin-left: 40%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+  border: 2px solid white; 
+}
+
+

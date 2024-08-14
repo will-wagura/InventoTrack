@@ -1,0 +1,25 @@
+/* Ensuring main container fills the viewport height */
+.main-container {
+  display: flex;
+  width: 10%; /* Ensure it takes up the full width of the viewport */
+  height: 50vh; /* Ensure it takes up the full height of the viewport */
+}
+.product-content {
+  display: flex;
+  flex: 1; /* Take up all available space in the row */
+}
+
+.product-list {
+  flex: 2; /* Product list takes up more space */
+  margin-right: 10px; /* Space between the list and preview */
+}
+
+.product-details-preview {
+  flex: 1; /* Take up the remaining space on the right */
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-left: 1px solid #ccc;
+  min-width: 300px; /* Ensure a minimum width for the preview */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+

@@ -1,0 +1,50 @@
+.payment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .search-input {
+    width: 250px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .header-buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-buttons button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .filter-button,
+  .add-item-button {
+    background-color: #1cc7d0;
+    color: #fff;
+  }
+  
+  .view-toggle-button {
+    background-color: #f1f1f1;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .view-icon {
+    width: 18px;
+    height: 18px;
+    background: url('/path-to-view-icon.svg') no-repeat center;
+    background-size: cover;
+  }
+  

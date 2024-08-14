@@ -1,0 +1,37 @@
+/* ProfitRevenueChart.css */
+.profit-revenue-chart {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  margin-right: 0%;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart-title {
+  color: #343a40;
+  font-size: 18px;
+}
+
+.chart-toggle {
+  background: #20c997;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chart-toggle:hover {
+  background: #17a589;
+}
+
+.chart-container {
+  height: 300px;
+}
