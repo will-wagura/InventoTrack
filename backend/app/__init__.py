@@ -25,7 +25,7 @@ s = URLSafeTimedSerializer(os.getenv("SECRET_KEY"))
 def create_app():
     app = Flask(__name__)
     app.config.from_object("app.config.Config")
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite3"
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
     app.config["SECURITY_LOGIN_URL"] = None
     app.config["SECURITY_LOGOUT_URL"] = None
     app.config["SECURITY_VERIFY_URL"] = None
