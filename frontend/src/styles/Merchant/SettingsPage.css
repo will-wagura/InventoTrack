@@ -1,12 +1,15 @@
 .settings-page {
   padding: 20px;
-  /* min-height: 100vh;  */
   box-sizing: border-box;
   color: #333;
   margin-bottom: 100px;
+  max-Height:700px ;
+  overflow-y: auto;
 }
 
+
 .settings-header {
+  width: 865px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -134,4 +137,17 @@ button {
 
 input[type="file"] {
   margin: 10px 0;
+}
+.settings-header h1 {
+  font-size: 40px;
+  font-weight: 900;
+  position: relative;
+  left: 35.5%;
+  align-items: center;
+  justify-content: center;
+  /* line-height: 1.1; */
+}
+.settings-content h2{
+  font-size: 25px;
+  font-weight: 500;
 }

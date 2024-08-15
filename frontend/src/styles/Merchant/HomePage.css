@@ -1,5 +1,8 @@
 .dashboard {
   padding: 20px;
+  width: 865px;
+  max-Height:700px ;
+  overflow-y: auto;
 }
 
 .home-header {
@@ -58,7 +61,7 @@
 
 .value {
   display: block;
-  font-size: 16px;
+  font-size: 17px;
   margin-bottom: 5px;
   color: #666;
 }
@@ -127,4 +130,29 @@ th {
 .sales-purchase,
 .order-summary {
   height: 350px;
+}
+.home-header h1 {
+  font-size: 40px;
+  font-weight: 900;
+  position: relative;
+  left: 35.5%;
+  align-items: center;
+  justify-content: center;
+  /* line-height: 1.1; */
+}
+.row h2{
+  font-size: 25px;
+  font-weight: 500;
+}
+h3{
+  font-size: 25px;
+  font-weight: 500;
+}
+span.label{
+  font-size: 19px;
+  font-weight: 800;
+}
+span{
+  font-size: 18px;
+  font-weight: 600;
 }

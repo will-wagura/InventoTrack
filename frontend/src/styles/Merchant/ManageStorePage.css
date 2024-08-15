@@ -1,7 +1,18 @@
 .manage-store-page {
   display: flex;
   background-color: #f8f9fa; /* Light grey background for the whole page */
-  min-height: 100vh;
+  max-Height:700px ;
+  overflow-y: auto;
+}
+
+.store-header h1 {
+  font-size: 40px;
+  font-weight: 900;
+  position: relative;
+  left: 35.5%;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .main-content {
@@ -100,7 +111,14 @@ input[type="search"],
   font-size: 37px;
   cursor: pointer;
 }
-
+h3{
+  font-size: 25px;
+  font-weight: 500;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
+}
 /*Chat Box*/
 
 
@@ -130,7 +148,10 @@ input[type="search"],
   font-size: 18px;
   color: #555;
 }
-
+h3{
+  font-size: 25px;
+  font-weight: 500;
+}
 /* Header styles */
 
 .header {
@@ -176,6 +197,7 @@ input[type="search"],
 
 /* Store list styles */
 .store-header {
+  width: 865px;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import styles from '../styles/Sidebar.module.css';
+import styles from "../../styles/Merchant/Sidebar.module.css";
 import {  FaChartLine } from 'react-icons/fa';
 import { FiHome, FiBriefcase } from "react-icons/fi";
 import { IoStorefrontOutline, IoFileTrayOutline  } from "react-icons/io5";

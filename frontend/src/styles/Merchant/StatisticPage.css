@@ -6,6 +6,7 @@
 }
 
 .statistics-header {
+  width: 865px;
   border-bottom: 2px solid #ccc;
   padding-bottom: 10px;
   position: sticky;
@@ -80,4 +81,27 @@ td {
   .overview-section {
     flex-direction: column;
   }
+}
+.statistics-header h1 {
+  font-size: 40px;
+  font-weight: 900;
+  position: relative;
+  left: 35.5%;
+  align-items: center;
+  justify-content: center;
+  /* line-height: 1.1; */
+}
+.overview-card h4{
+  font-size: 20px ;
+  color: #27D8C3 ;
+  font-weight: 900 ;
+}
+.profit-revenue-chart h4{
+  font-size: 20px ;
+  color: #27D8C3 ;
+  font-weight: 900 ;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
 }

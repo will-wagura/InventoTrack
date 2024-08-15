@@ -2,9 +2,13 @@
 
    .order-page {
     padding: 20px;
+    max-Height:700px ;
+    overflow-y: auto;
+}
    
-  }
+  
   .order-header {
+    width: 865px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,18 +21,6 @@
   }
   
 
-/*   
-  h1 {
-  font-size: 100px;
-  color: #00bfa5;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  bottom: 20px;
-  left: 30.5%;
-  font-weight: 900;
-  } */
-  
   .chart-row {
     display: flex;
     justify-content: space-between;
@@ -67,4 +59,18 @@ font-weight: 900;
       width: 100%;
       margin-bottom: 20px;
     }
+  }
+
+  .order-header h1 {
+    font-size: 40px;
+    font-weight: 900;
+    position: relative;
+    left: 35.5%;
+    align-items: center;
+    justify-content: center;
+    /* line-height: 1.1; */
+  }
+  .chart-container h2{
+    font-size: 25px;
+    font-weight: 500;
   }

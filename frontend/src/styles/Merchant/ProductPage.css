@@ -1,8 +1,9 @@
 .product-page {
   padding: 20px;
-  /* max-Height: 600px;
-  overflow-y: auto; */
+  max-Height:700px ;
+  overflow-y: auto;
 }
+
 
 .product-controls {
   display: flex;
@@ -114,4 +115,17 @@ tr:hover {
 
 .product-info p {
   margin: 5px 0;
+}
+
+h2{
+  font-size: 25px;
+  font-weight: 500;
+}
+h3{
+  font-size: 25px;
+  font-weight: 500;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
 }

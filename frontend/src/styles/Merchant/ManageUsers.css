@@ -6,9 +6,12 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 3px solid rgb(255, 255, 255);
+  max-Height:700px ;
+  overflow-y: auto;
 }
 
 .users-header {
+  width: 865px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,4 +117,20 @@ h2 {
 
 .admin-list button:last-of-type:hover {
   background-color: #c82333;
+}
+
+
+.users-header h1 {
+  font-size: 40px;
+  font-weight: 900;
+  position: relative;
+  left: 35.5%;
+  align-items: center;
+  justify-content: center;
+  /* line-height: 1.1; */
+}
+
+.add-admin h3{
+  font-size: 25px;
+  font-weight: 500;
 }

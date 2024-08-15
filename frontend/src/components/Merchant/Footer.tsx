@@ -1,6 +1,6 @@
 // components/Footer.tsx
 import React from "react";
-import styles from "../styles/Footer.module.css";
+import styles from "../../styles/Merchant/Footer.module.css";
 
 const Footer: React.FC = () => {
   return (
