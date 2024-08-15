@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaHome, FaBoxOpen, FaReceipt, FaMoneyBill, FaChartLine, FaUsersCog, FaCog, FaSignOutAlt } from 'react-icons/fa';
-import './Sidebar.css';
+import "../../styles/Admin/SidebarAdmin.css";
 
 const Sidebar = () => {
   const location = useLocation();
