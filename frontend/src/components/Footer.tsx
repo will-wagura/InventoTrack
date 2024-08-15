@@ -1,127 +1,72 @@
-// components/Footer.tsx
-import React from "react";
-import styles from "../styles/Footer.module.css";
-
-const Footer: React.FC = () => {
-  return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.logoSection}>
-          <img
-            src="/src/assets/inventotrack-high-resolution-logo-transparent (2).png"
-            alt="InventoTrack Logo"
-            className={styles.logo}
-          />
-          <p>Inventory simplified for small teams and developers.</p>
-        </div>
-
-        <div className={styles.linksSection}>
-          <div className={styles.column}>
-            <h4>Follow us</h4>
-            <div className={styles.socialIcons}>
-              <a href="#" aria-label="Facebook">
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a href="#" aria-label="Twitter">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" aria-label="LinkedIn">
-                <i className="fab fa-linkedin"></i>
-              </a>
-              <a href="#" aria-label="Instagram">
-                <i className="fab fa-instagram"></i>
-              </a>
+    import React from 'react';
+    import './Footer.css';
+    
+    const Footer = ({ setActiveComponent }) => {
+      return (
+        <footer className="footer">
+          <div className="container">
+            <div className="logoSection">
+              <img src="/logo.png" alt="InventoTrack Logo" className="logo" /> 
+              <p>Inventory simplified for small teams and developers.</p>
             </div>
-            <p>Call us</p>
-            <p>+254 792 313 772</p>
+            <div className="linksSection">
+              <div className="column">
+                <h4>Follow us</h4>
+                <div className="socialIcons">
+                  <a href="https://facebook.com" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
+                  <a href="https://twitter.com" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+                  <a href="https://linkedin.com" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
+                  <a href="https://instagram.com" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+                </div>
+                <p>Call us</p>
+                <p>+254 792 313 772</p>
+              </div>
+              <div className="column">
+                <h4>Product</h4>
+                <ul>
+                  <li><a href="#" onClick={() => setActiveComponent('landingPage')}>Landing Page</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('popupBuilder')}>Popup Builder</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('webDesign')}>Web-design</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('content')}>Content</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('integrations')}>Integrations</a></li>
+                </ul>
+              </div>
+              <div className="column">
+                <h4>Use Cases</h4>
+                <ul>
+                  <li><a href="#" onClick={() => setActiveComponent('webDesigners')}>Web-designers</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('marketers')}>Marketers</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('smallBusiness')}>Small Business</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('websiteBuilder')}>Website Builder</a></li>
+                </ul>
+              </div>
+              <div className="column">
+                <h4>Company</h4>
+                <ul>
+                  <li><a href="#" onClick={() => setActiveComponent('aboutUs')}>About Us</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('careers')}>Careers</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('faqs')}>FAQs</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('teams')}>Teams</a></li>
+                  <li><a href="#" onClick={() => setActiveComponent('contactUs')}>Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-
-          <div className={styles.column}>
-            <h4>Product</h4>
-            <ul>
-              <li>
-                <a href="#">Landing Page</a>
-              </li>
-              <li>
-                <a href="#">Popup Builder</a>
-              </li>
-              <li>
-                <a href="#">Web-design</a>
-              </li>
-              <li>
-                <a href="#">Content</a>
-              </li>
-              <li>
-                <a href="#">Integrations</a>
-              </li>
-            </ul>
+          <div className="bottomBar">
+            <div className="container">
+              <p>&copy; 2024 All Rights Reserved.</p>
+              <ul>            
+                <li><a href="https://example.com/privacy-policy">Privacy Policy</a></li>
+                <li><a href="https://example.com/terms-of-use">Terms of Use</a></li>
+                <li><a href="https://example.com/sales-and-refunds">Sales and Refunds</a></li>
+                <li><a href="https://example.com/legal">Legal</a></li>
+                <li><a href="https://example.com/site-map">Site Map</a></li>
+              </ul>
+            </div>
           </div>
-
-          <div className={styles.column}>
-            <h4>Use Cases</h4>
-            <ul>
-              <li>
-                <a href="#">Web-designers</a>
-              </li>
-              <li>
-                <a href="#">Marketers</a>
-              </li>
-              <li>
-                <a href="#">Small Business</a>
-              </li>
-              <li>
-                <a href="#">Website Builder</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className={styles.column}>
-            <h4>Company</h4>
-            <ul>
-              <li>
-                <a href="#">About Us</a>
-              </li>
-              <li>
-                <a href="#">Careers</a>
-              </li>
-              <li>
-                <a href="#">FAQs</a>
-              </li>
-              <li>
-                <a href="#">Teams</a>
-              </li>
-              <li>
-                <a href="#">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.bottomBar}>
-        <div className={styles.container}>
-          <p>&copy; 2024 All Rights Reserved.</p>
-          <ul>
-            <li>
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#">Terms of Use</a>
-            </li>
-            <li>
-              <a href="#">Sales and Refunds</a>
-            </li>
-            <li>
-              <a href="#">Legal</a>
-            </li>
-            <li>
-              <a href="#">Site Map</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
+        </footer>
+      );
+    };
+    
+    export default Footer;
+    

@@ -1,0 +1,80 @@
+.App {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .main-container {
+    display: flex;
+    width: 10%;
+    height: 55vh; 
+  }
+  
+  .content {
+    flex: 1;
+    margin-left: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  .footer {
+    padding: 20px;
+    background: #f8f9fa;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  
+  .page-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .left-column {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-right: 10;
+    box-sizing: border-box;
+  }
+  
+  .right-section {
+    width: 374px;
+    padding: 20px;
+    padding-bottom: 180px;
+    border-left: 1px solid #ccc;
+    background-color: #f9f9f9;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1;
+  }
+  
+  .dashboard-header, .dashboard-stats, .dashboard-charts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-right: 29%; 
+  }
+  
+  .dashboard-stats .stat, .dashboard-charts .chart {
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    flex: 1;
+    margin-right: 0;
+  }
+  
+  .dashboard-stats .stat:last-child, .dashboard-charts .chart:last-child {
+    margin-right: 0;
+  }
+  
+  .page-content {
+    margin-right: 0; 
+    padding: 0;
+  }
