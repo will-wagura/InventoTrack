@@ -10,21 +10,25 @@
     transform: translateY(-550px);
     color: #333;
     position: relative;
-    bottom: 40px;
+    bottom: 20px;
    
   }
-  .order-header {
+  /* .order-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
     position: sticky;
-    top: 0;
+    width: 60%;
     background-color: #fff;
     z-index: 10;
+    position: relative;
+    bottom: 600px;
+    left: 200px;
+
   }
-  
+   */
 
 /*   
   h1 {

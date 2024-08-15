@@ -1,17 +1,27 @@
 .statistics-content {
-  padding: 10px;
+  /* padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
+  color: #333; */
+  padding: 20px;
+  max-height: 650px;
+  overflow-y: auto;
+  width: 65%;
+  margin-bottom: -550px;
+  margin-left: 200px;
+  transform: translateY(-550px);
   color: #333;
+  position:relative;
+  bottom:30px;
 }
 
-.statistics-header {
+/* .statistics-header {
   border-bottom: 2px solid #ccc;
   padding-bottom: 10px;
   position: sticky;
   background-color: #fff;
   z-index: 10;
-}
+} */
 
 
 .statistics-content h1 {
