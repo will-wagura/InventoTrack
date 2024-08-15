@@ -1,4 +1,5 @@
-import React from 'react';
+// import React from 'react';  <-- Remove this line
+
 import { IoMdNotifications } from "react-icons/io";
 import './RightSection.css';
 

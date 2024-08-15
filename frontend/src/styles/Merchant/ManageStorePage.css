@@ -20,12 +20,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   color: #333;
-<<<<<<< HEAD
   position: relative;
   bottom: 2009px;
   left: 1056px;
-=======
->>>>>>> 28f47f84ffbec8cbf831c5214112643810d4ff81
 }
 
 /* Inbox.css */
@@ -138,10 +135,6 @@ input[type="search"],
 }
 
 /* Header styles */
-<<<<<<< HEAD
-=======
-
->>>>>>> 28f47f84ffbec8cbf831c5214112643810d4ff81
 .header {
   display: flex;
   justify-content: space-between;
@@ -150,13 +143,6 @@ input[type="search"],
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-<<<<<<< HEAD
-  position: relative;
-  bottom: 554px;
-  left: 200px;
-  width: 76%;
-=======
->>>>>>> 28f47f84ffbec8cbf831c5214112643810d4ff81
 }
 
 .header input[type="text"] {
