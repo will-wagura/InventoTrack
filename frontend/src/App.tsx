@@ -338,7 +338,7 @@ import Sidebar from "./components/Merchant/Sidebar";
 import Footer from "./components/Merchant/Footer";
 import Header from "./components/Merchant/Header";
 import Inbox from "./components/Merchant/Inbox";
-import AdminActivity from "./components/Merchant/AdminActivity";
+// import AdminActivity from "./components/Merchant/AdminActivity";
 import Home from "./pages/Merchant/Home";
 import ManageUsers from "./pages/Merchant/ManageUsers";
 import ManageStorePage from "./pages/Merchant/ManageStorePage";
