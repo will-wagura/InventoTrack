@@ -1,7 +1,12 @@
+from datetime import datetime, timedelta
 from flask import Blueprint, request, jsonify
+from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required
 from app import db, bcrypt
 from app.utilities import verify_invitation_token
-from app.models import User, Role
+from app.models import User, Role, Token
+from flask_wtf.csrf import CSRFProtect, generate_csrf
+
+csrf = CSRFProtect()
 
 # Define the Blueprint
 bp = Blueprint("auth_routes", __name__)
@@ -47,7 +52,7 @@ def register():
         name=name,
         email=email,
         contact=contact,
-        password=bcrypt.generate_password_hash(password).decode("utf-8"),
+        password=password,
         active=True,
     )
     new_user.roles.append(role)
@@ -62,9 +67,10 @@ def register():
 
 
 @bp.route("/login", methods=["POST"])
+@csrf.exempt
 def login():
     """
-    Login a user.
+    Login a user and return a JWT token if not expired or create new ones.
     """
     data = request.json
 
@@ -79,7 +85,131 @@ def login():
 
     user = User.query.filter_by(email=email).first()
 
-    if not user or not bcrypt.check_password_hash(user.password, password):
-        return jsonify({"error": "Invalid email or password"}), 400
+    if not user:
+        return jsonify({"error": "No such user"}), 400
 
-    return jsonify({"data": {"message": "Login successful"}}), 200
+    if not user.active:
+        return jsonify({"error": "User is inactive"}), 403
+
+    if not user.verify_password(password):
+        return jsonify({"error": "Invalid password"}), 400
+
+    # get the user role
+    role = user.role or User.query.filter_by(email=email).first().role
+
+    # Check for existing token
+    existing_token = Token.query.filter_by(user_id=user.id, revoked=False).first()
+
+    if existing_token and not existing_token.is_expired():
+        # Existing valid token found
+        return (
+            jsonify(
+                {
+                    "data": {
+                        "message": "Login successful",
+                        "access_token": existing_token.access_token,
+                        "refresh_token": existing_token.refresh_token,
+                        "role": role,
+                    }
+                }
+            ),
+            200,
+        )
+
+    # Create new JWT tokens
+    access_token = create_access_token(
+        identity=user.id, expires_delta=None  # Change expiration as needed
+    )
+    refresh_token = create_refresh_token(identity=user.id)
+
+    # Store new tokens in the database
+    new_token = Token(
+        user_id=user.id,
+        access_token=access_token,
+        refresh_token=refresh_token,
+        revoked=False,
+        expires_at=datetime.utcnow() + timedelta(minutes=15),  # Example expiration time
+    )
+    db.session.add(new_token)
+    db.session.commit()
+
+    return (
+        jsonify(
+            {
+                "data": {
+                    "message": "Login successful",
+                    "access_token": access_token,
+                    "refresh_token": refresh_token,
+                    "role": role,
+                }
+            }
+        ),
+        200,
+    )
+
+
+@bp.route("/refresh", methods=["POST"])
+@jwt_required(refresh=True)
+def refresh():
+    """
+    Refresh an expired token.
+    """
+    data = request.json
+
+    if not data:
+        return jsonify({"error": "No data provided"}), 400
+
+    refresh_token = data.get("refresh_token")
+
+    if not refresh_token:
+        return jsonify({"error": "Refresh token is required"}), 400
+
+    token = Token.query.filter_by(refresh_token=refresh_token, revoked=False).first()
+
+    if not token or token.is_expired():
+        return jsonify({"error": "Invalid or expired refresh token"}), 400
+
+    access_token = create_access_token(identity=token.user_id, expires_delta=None)
+    refresh_token = create_refresh_token(identity=token.user_id)
+
+    token.access_token = access_token
+    token.refresh_token = refresh_token
+    token.expires_at = datetime.utcnow() + timedelta(minutes=15)
+
+
+@bp.route("/logout", methods=["POST"])
+@jwt_required()
+def logout():
+    """
+    Revoke the current token.
+    """
+    data = request.json
+
+    if not data:
+        return jsonify({"error": "No data provided"}), 400
+
+    access_token = data.get("access_token")
+
+    if not access_token:
+        return jsonify({"error": "Access token is required"}), 400
+
+    token = Token.query.filter_by(access_token=access_token, revoked=False).first()
+
+    if not token:
+        return jsonify({"error": "Invalid access token"}), 400
+
+    token.revoked = True
+    db.session.commit()
+
+    return jsonify({"data": {"message": "Logout successful"}}), 200
+
+
+# def delete_expired_users():
+#     expiration_time = datetime.utcnow() - timedelta(minutes=10)
+#     expired_users = PendingUser.query.filter(
+#         PendingUser.created_at < expiration_time, PendingUser.is_verified == False
+#     ).all()
+
+#     for user in expired_users:
+#         db.session.delete(user)
+#     db.session.commit()
