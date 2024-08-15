@@ -6,14 +6,14 @@ import {
   FaClipboardList,
   FaSignOutAlt,
 } from "react-icons/fa";
-import "../SidebarClerk.css";
+import "../../styles/Clerk/SidebarClerk.css";
 // import logo from "../image/inventotrack-high-resolution-logo-transparent-top.png";
 
 interface Props {
   setActiveComponent: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function SidebarClerk({ setActiveComponent }: Props) {
+function Sidebar({ setActiveComponent }: Props) {
   const [activeItem, setActiveItem] = useState("home");
 
   const handleSetActive = (component: string) => {
@@ -69,4 +69,4 @@ function SidebarClerk({ setActiveComponent }: Props) {
   );
 }
 
-export default SidebarClerk;
+export default Sidebar;

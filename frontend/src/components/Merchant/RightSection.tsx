@@ -1,4 +1,3 @@
-import React from 'react';
 import { IoMdNotifications } from "react-icons/io";
 import '../../styles/Merchant/ManageStorePage.css';
 

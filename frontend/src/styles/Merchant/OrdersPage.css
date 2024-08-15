@@ -2,6 +2,15 @@
 
    .order-page {
     padding: 20px;
+    max-height: 650px;
+    overflow-y: auto;
+    width: 65%;
+    margin-bottom: -550px;
+    margin-left: 200px;
+    transform: translateY(-550px);
+    color: #333;
+    position: relative;
+    bottom: 40px;
    
   }
   .order-header {

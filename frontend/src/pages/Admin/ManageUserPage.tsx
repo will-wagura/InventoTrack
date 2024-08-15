@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import UserList from '../../components/Admin/UserList';
-import AddUserButton from '../../components/Admin/AddUserButton';
+// import AddUserButton from '../../components/Admin/AddUserButton';
 import './ManageUserPage.css';
 
 const ManageUserPage: React.FC = () => {
@@ -22,11 +22,11 @@ const ManageUserPage: React.FC = () => {
     console.log(`Deleted user at index ${index}`);
   };
 
-  const handleAddUser = () => {
-    const newUser = { name: 'New User', role: 'Clerk', profilePicture: '/default-avatar.png', isActive: true };
-    setUsers([...users, newUser]);
-    console.log('Added new user');
-  };
+  // const handleAddUser = () => {
+  //   const newUser = { name: 'New User', role: 'Clerk', profilePicture: '/default-avatar.png', isActive: true };
+  //   setUsers([...users, newUser]);
+  //   console.log('Added new user');
+  // };
 
   // Filter users to only include those with the role 'Clerk'
   const clerks = users.filter(user => user.role === 'Clerk');
@@ -35,7 +35,7 @@ const ManageUserPage: React.FC = () => {
     <div className="manage-user-page">
       <h1>Manage Users</h1>
       <UserList users={clerks} onToggleActivation={handleToggleActivation} onDelete={handleDelete} />
-      <AddUserButton onAddUser={handleAddUser} />
+      {/* <AddUserButton onAddUser={handleAddUser} /> */}
     </div>
   );
 };

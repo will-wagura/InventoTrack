@@ -1,6 +1,6 @@
 import { Box, Typography, Link, Container } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import "../../styles/Clerk/Footer.css";
+import "./Footer.css";
 import { SiHuawei } from "react-icons/si";
 import { IoLogoWindows } from "react-icons/io";
 import { FaAppStore, FaGooglePlay } from "react-icons/fa";
