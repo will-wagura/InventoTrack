@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./ItemEntry.css";
-import { Item } from "../types/Item";
+import "../../styles/Clerk/ItemEntry.css";
+import { Item } from "../../types/Item";
 
 interface Props {
   onAddItem: (item: Item) => void | (() => void);

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./StockInformation.css";
-import { Item } from "../types/Item";
+import "../../styles/Clerk/StockInformation.css";
+import { Item } from "../../types/Item";
 
 interface Props {
   onDelete: (index: number) => void | (() => void);

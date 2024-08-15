@@ -40,5 +40,5 @@ def verify_invitation_token(token):
     except jwt.InvalidTokenError:
         return {"error": "Invalid token"}
     except Exception as e:
-        current_app.logger.error(f"Error verifying invitation token: {e}")
+        print(f"Error verifying invitation token: {e}")
         return {"error": "Unknown error"}

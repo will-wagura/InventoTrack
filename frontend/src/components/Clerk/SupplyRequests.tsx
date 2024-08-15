@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./SupplyRequests.css";
+import "../../styles/Clerk/SupplyRequests.css";
 
 function SupplyRequests() {
   const [itemName, setItemName] = useState("");

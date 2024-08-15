@@ -30,10 +30,14 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
+    JWT_EXPIRATION_DELTA = int(os.getenv("JWT_EXPIRATION_DELTA") or 360000)
     SECURITY_PASSWORD_SALT = os.getenv("SECURITY_PASSWORD_SALT")
     # SECURITY_PASSWORD_SALT = "your_secret_salt"
-    SECURITY_PASSWORD_HASH = "bcrypt"
-
+    SECURITY_PASSWORD_HASH = os.getenv("SECURITY_PASSWORD_HASH") or "pbkdf2_sha256"
+    # SECURITY_LOGIN_URL = None
+    # SECURITY_LOGOUT_URL = None
+    # SECURITY_REGISTER_URL = None
+    # SECURITY_RESET_URL = None
     # Flask-Mail settings
     MAIL_SERVER = os.getenv("MAIL_SERVER")
     MAIL_PORT = int(os.getenv("MAIL_PORT") or 25)
@@ -41,7 +45,9 @@ class Config:
     MAIL_USERNAME = os.getenv("MAIL_USERNAME")
     MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")
     MAIL_DEFAULT_SENDER = os.getenv("MAIL_DEFAULT_SENDER")
-
+    SECURITY_CSRF_PROTECT = False
+    WTF_CSRF_ENABLED = False
+    SECURITY_CSRF_IGNORE_UNAUTH_ENDPOINTS = True
     # URL of the frontend application
     FRONTEND_URL = os.getenv("FRONTEND_URL")
 

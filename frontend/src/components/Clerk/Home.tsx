@@ -1,5 +1,5 @@
 
-import './Home.css';
+import '../../styles/Clerk/Home.css';
 import { FaChartLine, FaBoxOpen, FaClipboardList, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
 
 function Home() {

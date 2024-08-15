@@ -1,5 +1,5 @@
 from flask_security import UserMixin, RoleMixin
-from datetime import datetime
+from datetime import datetime, timedelta
 import pytz
 from flask_bcrypt import Bcrypt
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
@@ -9,11 +9,10 @@ from uuid import uuid4
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 
-# from sqlalchemy import Metadata
-
 bcrypt = Bcrypt()
-# Set the EAT timezone
+
 EAT = pytz.timezone("Africa/Nairobi")
+
 
 metadata = MetaData(
     naming_convention={
@@ -58,7 +57,7 @@ class User(db.Model, UserMixin):
     confirmed_at = db.Column(db.DateTime(), nullable=True)
     created_at = db.Column(db.DateTime(), default=lambda: datetime.now(EAT))
     updated_at = db.Column(db.DateTime(), default=lambda: datetime.now(EAT))
-
+    role = db.Column(db.String(255), nullable=True)
     # Relationships
     roles = db.relationship(
         "Role", secondary=user_roles, backref=db.backref("users", lazy="dynamic")
@@ -70,7 +69,7 @@ class User(db.Model, UserMixin):
 
     @property
     def password(self):
-        raise AttributeError("password is not a readable attribute")
+        return self.password_hash
 
     @password.setter
     def password(self, password):
@@ -89,23 +88,93 @@ class User(db.Model, UserMixin):
             "created_at": self.created_at.strftime("%Y-%m-%d %H:%M:%S"),
             "updated_at": self.updated_at.strftime("%Y-%m-%d %H:%M:%S"),
             "roles": [role.to_dict() for role in self.roles],
+            "role": self.role,
         }
 
 
-# Define the Product model
+class PendingUser(db.Model):
+    __tablename__ = "pending_users"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), unique=False)
+    # tf_phone_number = db.Column(db.String(15), unique=True)
+    email = db.Column(db.String(255), unique=True)
+    password = db.Column(db.String(255))
+    role = db.Column(db.String(255))
+    token = db.Column(db.String(255), unique=True)
+    token_expiration = db.Column(
+        db.DateTime, default=lambda: datetime.now(EAT) + timedelta(days=1)
+    )
+
+    is_verified = db.Column(db.Boolean, default=False)
+
+    # @property
+    # def password(self):
+    #     return self.password
+
+    # @password.setter
+    # def password(self, password):
+    #     self.password = bcrypt.generate_password_hash(password).decode("utf-8")
+
+    def __repr__(self):
+        return f"<PendingUser email={self.email} token={self.token}>"
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            # "tf_phone_number": self.tf_phone_number,
+            "email": self.email,
+            "role": self.role,
+            "token": self.token,
+            "token_expiration": self.token_expiration.strftime("%Y-%m-%d %H:%M:%S"),
+            "is_verified": self.is_verified,
+        }
+
+
+class Store(db.Model):
+    __tablename__ = "stores"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), nullable=False)
+    location = db.Column(db.String(255), nullable=False)
+    created_at = db.Column(db.DateTime(), default=lambda: datetime.now(EAT))
+    updated_at = db.Column(db.DateTime(), default=lambda: datetime.now(EAT))
+    created_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    admin_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+
+    # Relationships
+    admin = db.relationship(
+        "User", backref=db.backref("managed_stores", lazy=True), foreign_keys=[admin_id]
+    )  # Admin user managing the store
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "location": self.location,
+            "created_at": self.created_at.strftime("%Y-%m-%d %H:%M:%S"),
+            "updated_at": self.updated_at.strftime("%Y-%m-%d %H:%M:%S"),
+            "created_by": self.created_by,
+            "admin_id": self.admin_id,
+            "admin": self.admin.to_dict() if self.admin else None,
+        }
+
+
 class Product(db.Model):
     __tablename__ = "products"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(255), nullable=True)
+    category = db.Column(db.String(255), nullable=True)
     price = db.Column(db.Float, nullable=False)
     expiry_date = db.Column(db.DateTime, nullable=True)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(EAT))
     updated_at = db.Column(db.DateTime, default=lambda: datetime.now(EAT))
     created_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    store_id = db.Column(db.Integer, db.ForeignKey("stores.id"), nullable=False)
 
     # Relationships
     user = db.relationship("User", backref=db.backref("products", lazy=True))
+    store = db.relationship("Store", backref=db.backref("products", lazy=True))
 
     def to_dict(self):
         return {
@@ -120,6 +189,9 @@ class Product(db.Model):
             "updated_at": self.updated_at.strftime("%Y-%m-%d %H:%M:%S"),
             "created_by": self.created_by,
             "user": self.user.to_dict() if self.user else None,
+            "store_id": self.store_id,
+            "store": self.store.to_dict() if self.store else None,
+            "category": self.category,
         }
 
 
@@ -254,9 +326,8 @@ class Message(db.Model):
     sender_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     receiver_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
     content = db.Column(db.Text, nullable=False)
-    timestamp = db.Column(
-        db.DateTime, default=lambda: datetime.now(pytz.timezone("EAT"))
-    )
+    timestamp = db.Column(db.DateTime, default=lambda: datetime.now(EAT))
+
     is_read = db.Column(db.Boolean, default=False)
 
     # Relationships
@@ -318,10 +389,10 @@ class ChatGroup(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False, unique=True)
     created_at = db.Column(
-        db.DateTime, nullable=False, default=lambda: datetime.now(pytz.timezone("EAT"))
+        db.DateTime, nullable=False, default=lambda: datetime.now(EAT)
     )
     updated_at = db.Column(
-        db.DateTime, nullable=False, default=lambda: datetime.now(pytz.timezone("EAT"))
+        db.DateTime, nullable=False, default=lambda: datetime.now(EAT)
     )
 
     # Relationship to link users to groups
@@ -355,7 +426,7 @@ class GroupMessage(db.Model):
     sender_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     content = db.Column(db.Text, nullable=False)
     timestamp = db.Column(
-        db.DateTime, nullable=False, default=lambda: datetime.now(pytz.timezone("EAT"))
+        db.DateTime, nullable=False, default=lambda: datetime.now(EAT)
     )
 
     # Relationships
@@ -370,3 +441,19 @@ class GroupMessage(db.Model):
             "content": self.content,
             "timestamp": self.timestamp.strftime("%Y-%m-%d %H:%M:%S"),
         }
+
+
+class Token(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    access_token = db.Column(db.String, nullable=False)
+    refresh_token = db.Column(db.String, nullable=False)
+    revoked = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    expires_at = db.Column(db.DateTime, nullable=True)
+
+    def is_expired(self):
+        return datetime.utcnow() > self.expires_at
+
+    def __repr__(self):
+        return f"<Token {self.id}>"

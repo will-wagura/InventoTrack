@@ -1,12 +1,17 @@
 .settings-page {
   padding: 20px;
-  /* min-height: 100vh;  */
-  box-sizing: border-box;
+  max-height: 650px;
+  overflow-y: auto;
+  width: 65%;
+  margin-bottom: -550px;
+  margin-left: 200px;
+  transform: translateY(-550px);
   color: #333;
-  margin-bottom: 100px;
+  position:relative;
+  bottom:30px;
 }
 
-.settings-header {
+/* .settings-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +23,7 @@
   background-color: #fff;
   z-index: 10;
  
-}
+} */
 
 
 

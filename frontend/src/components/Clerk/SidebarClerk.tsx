@@ -6,8 +6,8 @@ import {
   FaClipboardList,
   FaSignOutAlt,
 } from "react-icons/fa";
-import "./Sidebar.css";
-import logo from "../image/inventotrack-high-resolution-logo-transparent-top.png";
+import "../../styles/Clerk/SidebarClerk.css";
+// import logo from "../image/inventotrack-high-resolution-logo-transparent-top.png";
 
 interface Props {
   setActiveComponent: React.Dispatch<React.SetStateAction<string>>;
@@ -24,7 +24,7 @@ function Sidebar({ setActiveComponent }: Props) {
   return (
     <aside className="sidebar">
       <div className="logo">
-        <img src={logo} alt="InventoTrack Logo" />
+        {/* <img src={logo} alt="InventoTrack Logo" /> */}
       </div>
       <nav>
         <ul>
