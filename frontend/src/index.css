@@ -1,146 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
 
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
 :root {
-  font-family: "Afacad", sans-serif !important;
-  line-height: 1.5;
-  font-weight: 400;
-  
+	font-family: 'Afacad', sans-serif !important;
+	line-height: 1.5;
+	font-weight: 400;
 
-  color-scheme: light dark;
-  color: white;
-  background-color: #f8f9fa;
-  overflow-x: hidden;
+	color-scheme: light dark;
+	color: white;
+	background-color: #f8f9fa;
+	overflow-x: hidden;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-
-} */
-
-/* h1 {
-  font-size: 40px;
-  font-weight: 900;
-  position: relative;
-  left: 35.5%;
-  align-items: center;
-  justify-content: center;
-
+button {
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 8px 15px;
+	cursor: pointer;
+	margin-right: 20px;
 }
-h2{
-  font-size: 25px;
-  font-weight: 500;
-}
-h3{
-  font-size: 25px;
-  font-weight: 500;
-}
-h4{
-  font-size: 20px ;
-  color: #27D8C3 ;
-  font-weight: 900 ;
-}
-
-span.label{
-  font-size: 18px;
-  font-weight: 600;
-}
-span{
-  font-size: 18px;
-  font-weight: 600;
-}
-
-
-p {
-  font-size: 18px;
-  font-weight: 400;
-} */
-/* button {
- 
-  background-color: #c82333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 15px;
-  cursor: pointer;
-  margin-right: 20px;
-} */
-/* button:hover {
-  border-color: #218872;
+button:hover {
+	border-color: #218872;
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+	outline: 4px auto -webkit-focus-ring-color;
 }
-
-input{color: grey;} */
 
 /* For webkit-based browsers (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
-  width: 20px; /* Reduced width of the vertical scrollbar */
-  height: 5px; /* Reduced height of the horizontal scrollbar */
+	width: 20px; /* Reduced width of the vertical scrollbar */
+	height: 5px; /* Reduced height of the horizontal scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+	background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27D8C3;
-  border-radius: 2px; /* Rounded corners for the thumb */
+	background: #27d8c3;
+	border-radius: 2px; /* Rounded corners for the thumb */
 }
 
 /* For Firefox */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #27D8C3 transparent;
+	scrollbar-width: thin;
+	scrollbar-color: #27d8c3 transparent;
 }
 
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
-/* body {
-  font-family: 'Arial', sans-serif; 
-  background-color: #f9f9f9; 
-  color: #333; 
-  line-height: 1.6;
-  margin-right: 0%;
-  margin-left:0%;
-} */
-
-
-
-/* img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-} */
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+	a:hover {
+		color: #747bff;
+	}
+	button {
+		background-color: #f9f9f9;
+	}
+}

@@ -326,9 +326,19 @@ const initialProducts: Product[] = [
 const ProductPage: React.FC = () => {
   const [products, setProducts] = useState(initialProducts);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [] = useState<string>('');
+  const [filterOption, setFilterOption] = useState<string>('');
   const [showBestSeller, setShowBestSeller] = useState(false);
 
+  const handleFilter = (option: string) => {
+    setFilterOption(option);
+    let sortedProducts = [...products];
+    if (option === 'id') {
+      sortedProducts.sort((a, b) => a.id.localeCompare(b.id));
+    } else if (option === 'product') {
+      sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+    }
+    setProducts(sortedProducts);
+  };
 
   const toggleBestSeller = () => {
     setShowBestSeller(!showBestSeller);
@@ -360,8 +370,8 @@ const ProductPage: React.FC = () => {
           <button className="btn">⋮</button>
         </div> */}
       </div>
-      <div className="product-contents">
-        <div className="product-lists">
+      <div className="product-content">
+        <div className="product-list">
           <table>
             <thead>
               <tr>
@@ -371,7 +381,7 @@ const ProductPage: React.FC = () => {
                 <th>Location</th>
                 <th>Price</th>
                 <th>Stock</th>
-                {/* <th>Action</th> */}
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -383,23 +393,23 @@ const ProductPage: React.FC = () => {
                   <td>{product.location}</td>
                   <td>Ksh {product.price}</td>
                   <td>{product.stock}</td>
-                  {/* <td>
+                  <td>
                     <button className="btn btn-small">⋮</button>
-                  </td> */}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
         {selectedProduct && (
-          <div className="product-previews">
-            <div className="preview-headers">
+          <div className="product-preview">
+            <div className="preview-header">
               <h2>Preview Product</h2>
               <button onClick={() => setSelectedProduct(null)} className="btn-close">×</button>
             </div>
-            <div className="preview-contents">
+            <div className="preview-content">
               <img src={selectedProduct.image} alt={selectedProduct.name} className="product-image" />
-              <div className="product-infos">
+              <div className="product-info">
                 <h3>{selectedProduct.id} - {selectedProduct.name}</h3>
                 <p>Stock: {selectedProduct.stock} - {selectedProduct.location}</p>
                 <p>Price: Ksh {selectedProduct.price}</p>

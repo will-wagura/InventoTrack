@@ -1,164 +1,120 @@
-import axios from 'axios';
+import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
-// Create an Axios instance with common settings
-const apiClient = axios.create({
-    baseURL: 'http://localhost:5000/api', // Replace with your Flask API base URL
+const apiClient: AxiosInstance = axios.create({
+    baseURL: 'http://127.0.0.1:5000',
+    timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
     },
 });
 
-// Utility function to get the token from localStorage or wherever it's stored
-function getAuthToken() {
-    return localStorage.getItem('token'); // Adjust according to your authentication method
-}
-
-// Add a request interceptor to attach the token to each request
-apiClient.interceptors.request.use(config => {
-    const token = getAuthToken();
+// Add a request interceptor to include the token in the headers
+apiClient.interceptors.request.use((config) => {
+    const token = localStorage.getItem('access_token');
     if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
+        config.headers['Authorization'] = `Bearer ${token}`;
     }
     return config;
-}, error => {
+}, (error) => {
     return Promise.reject(error);
 });
 
-// Auth API
-export const registerUser = async (data: any) => {
-    return apiClient.post('/auth/register', data);
+// Interceptor to handle errors globally and manage token refresh
+apiClient.interceptors.response.use(
+    (response: AxiosResponse) => response,
+    async (error: AxiosError) => {
+        const status = error.response?.status;
+        const originalRequest = error.config;
+
+        if (status === 401 && !originalRequest._retry) {
+            console.error('Unauthorized access - possibly invalid token.');
+
+            originalRequest._retry = true; // Avoid infinite loop on token refresh
+
+            const refreshToken = localStorage.getItem('refresh_token');
+            if (refreshToken) {
+                try {
+                    const { data } = await axios.post<{ access_token: string }>(
+                        'http://127.0.0.1:5000/refresh',
+                        { refresh_token: refreshToken }
+                    );
+
+                    localStorage.setItem('access_token', data.access_token);
+
+                    // Update the original request with the new token
+                    apiClient.defaults.headers['Authorization'] = `Bearer ${data.access_token}`;
+                    originalRequest.headers['Authorization'] = `Bearer ${data.access_token}`;
+                    return apiClient(originalRequest); // Retry the original request
+                } catch (refreshError) {
+                    console.error('Token refresh failed:', refreshError);
+                    // Handle failed refresh, e.g., redirect to login
+                }
+            }
+
+            // Optionally, redirect to login or show a message
+        } else if (status === 404) {
+            console.error('Resource not found.');
+        } else {
+            console.error('API call error:', status, error.message);
+        }
+
+        return Promise.reject(error);
+    }
+);
+export const refreshToken = async (refreshToken: string) => {
+    try {
+        const response = await axios.post(
+            'http://127.0.0.1:5000/refresh',
+            { refresh_token: refreshToken }
+        );
+        return response.data;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            console.error('Token refresh failed:', error.response?.data || error.message);
+        } else {
+            console.error('Unexpected error:', error);
+        }
+        throw error;
+    }
+};
+export const login = async (email: string, password: string) => {
+    try {
+        const { data } = await apiClient.post<{ access_token: string, refresh_token: string }>(
+            '/login',
+            { email, password }
+        );
+
+        localStorage.setItem('access_token', data.access_token);
+        localStorage.setItem('refresh_token', data.refresh_token);
+
+        return data;
+    } catch (error) {
+        console.error('Login failed:', error);
+        throw error;
+    }
 };
 
-// Chat API
-export const sendMessage = async (data: any) => {
-    return apiClient.post('/chat/send', data);
+// Generic HTTP methods
+export const get = async <T>(url: string, params?: any): Promise<T> => {
+    try {
+        const response = await apiClient.get<T>(url, { params });
+        return response.data;
+    } catch (error) {
+        console.error('API request failed:', error);
+        throw error; // Rethrow to handle it in the component
+    }
 };
 
-export const fetchMessages = async (otherUserId: string) => {
-    return apiClient.get(`/chat/messages`, {
-        params: { other_user_id: otherUserId },
-    });
+
+export const post = async <T>(url: string, data: any): Promise<T> => {
+    return apiClient.post<T>(url, data).then(response => response.data);
 };
 
-export const markMessageRead = async (messageId: number) => {
-    return apiClient.post(`/chat/mark_read/${messageId}`);
+export const put = async <T>(url: string, data: any): Promise<T> => {
+    return apiClient.put<T>(url, data).then(response => response.data);
 };
 
-export const getUnreadCount = async () => {
-    return apiClient.get('/chat/unread_count');
+export const del = async <T>(url: string): Promise<T> => {
+    return apiClient.delete<T>(url).then(response => response.data);
 };
-
-export const getRecentChats = async () => {
-    return apiClient.get('/chat/recent');
-};
-
-// Email API
-export const sendInvite = async (email: string) => {
-    return apiClient.post('/emails/send-invite', { email });
-};
-
-export const sendNotification = async (email: string, subject: string, message: string) => {
-    return apiClient.post('/emails/send-notification', { email, subject, message });
-};
-
-// Image API
-export const uploadImage = async (file: File) => {
-    const formData = new FormData();
-    formData.append('file', file);
-
-    return apiClient.post('/images/upload', formData, {
-        headers: {
-            'Content-Type': 'multipart/form-data',
-        },
-    });
-};
-
-export const deleteImage = async (imageId: number) => {
-    return apiClient.delete(`/images/${imageId}`);
-};
-
-// Payments API
-export const getPayments = async () => {
-    return apiClient.get('/payment');
-};
-
-export const updatePayment = async (id: number, status: string) => {
-    return apiClient.put(`/payment/${id}`, { status });
-};
-
-// Product API
-export const getProducts = async () => {
-    return apiClient.get('/product');
-};
-
-export const getProductById = async (id: number) => {
-    return apiClient.get(`/product/${id}`);
-};
-
-export const createProduct = async (data: any) => {
-    return apiClient.post('/product', data);
-};
-
-export const updateProduct = async (id: number, data: any) => {
-    return apiClient.put(`/product/${id}`, data);
-};
-
-export const deleteProduct = async (id: number) => {
-    return apiClient.delete(`/product/${id}`);
-};
-
-// Reports API
-export const getWeeklyReport = async () => {
-    return apiClient.get('/reports/weekly');
-};
-
-export const getMonthlyReport = async () => {
-    return apiClient.get('/reports/monthly');
-};
-
-export const getAnnualReport = async () => {
-    return apiClient.get('/reports/annual');
-};
-
-export const getAnalytics = async () => {
-    return apiClient.get('/reports/analytics');
-};
-
-// Supplies API
-export const getSupplies = async () => {
-    return apiClient.get('/supply');
-};
-
-export const getSupplyById = async (id: number) => {
-    return apiClient.get(`/supply/${id}`);
-};
-
-export const createSupply = async (data: any) => {
-    return apiClient.post('/supply', data);
-};
-
-export const updateSupply = async (id: number, data: any) => {
-    return apiClient.put(`/supply/${id}`, data);
-};
-
-export const deleteSupply = async (id: number) => {
-    return apiClient.delete(`/supply/${id}`);
-};
-
-// Users API
-export const getUsers = async () => {
-    return apiClient.get('/users');
-};
-
-export const getUserById = async (id: number) => {
-    return apiClient.get(`/user/${id}`);
-};
-
-export const updateUser = async (id: number, data: any) => {
-    return apiClient.put(`/user/${id}`, data);
-};
-
-export const deleteUser = async (id: number) => {
-    return apiClient.delete(`/user/${id}`);
-};
-

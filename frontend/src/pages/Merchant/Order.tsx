@@ -50,9 +50,9 @@ const averageOrderValueData = [
 const Order: React.FC = () => {
   return (
     <div className="order">
-       {/* <header className="order-header">
+       <header className="order-header">
                 <h1>Order Analystics</h1>
-            </header> */}
+            </header>
     <div className="order-page">
      
       

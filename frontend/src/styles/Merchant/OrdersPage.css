@@ -2,46 +2,25 @@
 
    .order-page {
     padding: 20px;
-    max-height: 650px;
+    max-Height:700px ;
     overflow-y: auto;
-    width: 65%;
-    margin-bottom: -550px;
-    margin-left: 200px;
-    transform: translateY(-550px);
-    color: #333;
-    position: relative;
-    bottom: 20px;
+}
    
-  }
-  /* .order-header {
+  
+  .order-header {
+    width: 865px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
     position: sticky;
-    width: 60%;
+    top: 0;
     background-color: #fff;
     z-index: 10;
-    position: relative;
-    bottom: 600px;
-    left: 200px;
-
   }
-   */
-
-/*   
-  h1 {
-  font-size: 100px;
-  color: #00bfa5;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  bottom: 20px;
-  left: 30.5%;
-  font-weight: 900;
-  } */
   
+
   .chart-row {
     display: flex;
     justify-content: space-between;
@@ -80,4 +59,18 @@ font-weight: 900;
       width: 100%;
       margin-bottom: 20px;
     }
+  }
+
+  .order-header h1 {
+    font-size: 40px;
+    font-weight: 900;
+    position: relative;
+    left: 35.5%;
+    align-items: center;
+    justify-content: center;
+    /* line-height: 1.1; */
+  }
+  .chart-container h2{
+    font-size: 25px;
+    font-weight: 500;
   }

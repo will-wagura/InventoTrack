@@ -1,7 +1,18 @@
 .manage-store-page {
   display: flex;
   background-color: #f8f9fa; /* Light grey background for the whole page */
-  min-height: 100vh;
+  max-Height:700px ;
+  overflow-y: auto;
+}
+
+.store-header h1 {
+  font-size: 40px;
+  font-weight: 900;
+  position: relative;
+  left: 35.5%;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .main-content {
@@ -12,31 +23,14 @@
 }
 
 /* Right Side Bar */
-.right-sidebars {
-  width: 270px;
+.right-sidebar {
+  width: 300px;
   background-color: #ffffff;
   padding: 20px;
   border-left: 1px solid white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: #333;
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0; 
-  height: fit-content;
-  
-  /* width: 18%;
-  background-color: #ffffff;
-  padding: 10px;
-  border-left: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   color: #333;
-  position: relative;
-  right: 5px;
-  top: 0;
-  bottom: 0;  */
-
 }
 
 /* Inbox.css */
@@ -117,18 +111,24 @@ input[type="search"],
   font-size: 37px;
   cursor: pointer;
 }
-
+h3{
+  font-size: 25px;
+  font-weight: 500;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
+}
 /*Chat Box*/
 
 
 /* AdminActivity.css */
-/* .admin-activity {
+.admin-activity {
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 5px;
   background-color: #f8f9fa;
   margin-right: 15px;
-  height: 50%;
 }
 
 .admin-activity h3 {
@@ -147,9 +147,13 @@ input[type="search"],
   margin-bottom: 8px;
   font-size: 18px;
   color: #555;
-} */
-
+}
+h3{
+  font-size: 25px;
+  font-weight: 500;
+}
 /* Header styles */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -158,10 +162,6 @@ input[type="search"],
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  position: relative;
-  bottom: 592px;
-  left: 200px;
-  width: 76%;
 }
 
 .header input[type="text"] {
@@ -197,6 +197,7 @@ input[type="search"],
 
 /* Store list styles */
 .store-header {
+  width: 865px;
   display: flex;
   justify-content: space-between;
   align-items: center;

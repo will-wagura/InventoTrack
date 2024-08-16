@@ -1,0 +1,73 @@
+.app {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* z-index: 1000; */
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar button {
+    /* margin-top: 10px */
+    position:relative;
+    top: 30px;
+    max-Height: 50px;
+    padding: 20px 10px;
+    background-color: #f1f0f3;
+    color: #00bfa5;
+    border: none;
+    cursor: pointer;
+    width: 243px;
+    border:2px solid white;
+  }
+  
+  .logout-btn {
+    margin-top: auto;
+    background-color: #00bfa5;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+  }
+  
+  input, select, button {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }

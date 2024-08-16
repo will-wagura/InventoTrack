@@ -16,9 +16,9 @@ const data = [
 const Statistics: React.FC = () => {
   return (
     <div className="statistics">
-       {/* <header className="statistics-header">
+       <header className="statistics-header">
                 <h1>Overview</h1>
-            </header> */}
+            </header>
     <div className="statistics-content">
        
       

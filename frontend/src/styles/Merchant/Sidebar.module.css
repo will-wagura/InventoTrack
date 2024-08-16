@@ -1,0 +1,54 @@
+.sidebar {
+  width: 200px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-right: 1px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bfa5;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menuItem {
+  margin-bottom: 20px; /* Increased margin to create a larger gap */
+}
+
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.sidebar a:hover {
+  color: #00bfa5;
+}
+
+.active {
+  color: #00bfa5 !important;
+  font-weight: bold;
+}
+
+.sidebar .icon {
+  margin-right: 10px;
+}
+.sidebar span {
+  margin-left: 10px; 
+}

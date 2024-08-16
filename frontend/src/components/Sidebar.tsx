@@ -1,59 +1,101 @@
+import { useState } from "react";
+import {
+  FaHome,
+  FaBoxOpen,
+  FaInfoCircle,
+  FaClipboardList,
+  FaSignOutAlt,
+} from "react-icons/fa";
+import "./Sidebar.css";
+import logo from "../image/inventotrack-high-resolution-logo-transparent-top.png";
+import { useNavigate, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../redux/slices/authSlice'
 
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import styles from '../styles/Sidebar.module.css';
-import {  FaChartLine } from 'react-icons/fa';
-import { FiHome, FiBriefcase } from "react-icons/fi";
-import { IoStorefrontOutline, IoFileTrayOutline  } from "react-icons/io5";
-// import { IoMdCard } from "react-icons/io";
-import { MdManageAccounts } from "react-icons/md";
-import { HiOutlineCog } from "react-icons/hi";
+interface Props {
+  setActiveComponent: React.Dispatch<React.SetStateAction<string>>;
+}
 
-const Sidebar: React.FC = () => {
-  const location = useLocation();
-  const [activeItem, setActiveItem] = useState('');
-  const menuItems = [
-    { icon: <FiHome />, name: 'Home', path: '/'},
-    { icon: <IoFileTrayOutline />, name: 'Products', path: '/products' },
-    { icon: <FiBriefcase />, name: 'Order', path: '/order' },
-    // { icon: <IoMdCard />, name: 'Payment', path: '/payment' },
-    { icon: <FaChartLine />, name: 'Statistic', path: '/statistic' },
-    { icon: <IoStorefrontOutline />, name: 'Manage Store', path: '/manage-store' },
-    { icon: <MdManageAccounts />, name: 'Manage Users', path: '/manage-users' },
-    { icon: <HiOutlineCog />, name: 'Settings', path: '/settings' },
-  ];
 
-  useEffect(() => {
-    const currentItem = menuItems.find(item => item.path === location.pathname);
-    if (currentItem) {
-      setActiveItem(currentItem.name);
-    }
-  }, [location]);
 
+const Sidebar: React.FC<Props> = ({ setActiveComponent }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [activeItem, setActiveItem] = useState("home");
+
+  const handleSetActive = (component: string) => {
+    setActiveItem(component);
+    setActiveComponent(component);
+  };
+
+
+
+  const handleLogout = () => {
+    // Dispatch the logout action
+    dispatch(logout());
+
+    // Optionally, wait for the logout action to complete
+    // before navigating away. This is useful if logout involves async operations.
+
+    // Navigate to login page
+    navigate('/login');
+  };
 
   return (
-    <aside className={styles.sidebar}>
-      <div className={styles.logo}>
-        <img src="/src/assets/logo sidebar.png" alt="InventoTrack Logo" />
+    <aside className="sidebar">
+      <div className="logo">
+        <img src={logo} alt="InventoTrack Logo" />
       </div>
       <nav>
         <ul>
-          {menuItems.map((item, index) => (
-            <li key={index} className={styles.menuItem}>
-              <Link
-                to={item.path}
-                className={activeItem === item.name ? styles.active : ''}
-                onClick={() => setActiveItem(item.name)}
-              >{item.icon}
-                <span>{item.name}</span>
-              </Link>
-            </li>
-          ))}
+          <li
+            className={activeItem === "home" ? "menuItem active" : "menuItem"}
+            onClick={() => {
+              handleSetActive("home");
+              navigate('merchant-dashboard');
+            }}
+          >
+            <Link to="/merchant-dashboard">
+              <FaHome /> <span>Dashboard</span>
+            </Link>
+          </li>
+          <li
+            className={activeItem === "itemEntry" ? "menuItem active" : "menuItem"}
+            onClick={() => {
+              navigate('item-entry');
+              handleSetActive("itemEntry");
+            }}
+          >
+            <FaBoxOpen /> <span>Item Entry</span>
+          </li>
+          <li
+            className={activeItem === "stockInfo" ? "menuItem active" : "menuItem"}
+            onClick={() => {
+              navigate('stock-information');
+              handleSetActive("stockInfo");
+            }}
+          >
+            <FaInfoCircle /> <span>Stock Information</span>
+          </li>
+          <li
+            className={activeItem === "supplyRequests" ? "menuItem active" : "menuItem"}
+            onClick={() => {
+              navigate('supply-requests');
+              handleSetActive("supplyRequests");
+            }}
+          >
+            <FaClipboardList /> <span>Supply Requests</span>
+          </li>
         </ul>
       </nav>
+      <button className="logout-btn" onClick={handleLogout}>
+        <h3>
+          <FaSignOutAlt /> Log Out
+        </h3>
+      </button>
     </aside>
   );
 };
 
 export default Sidebar;
-

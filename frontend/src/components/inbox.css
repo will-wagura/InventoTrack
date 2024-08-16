@@ -1,0 +1,53 @@
+.inbox {
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.inbox h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.message {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  background-color: #ffffff; /* Default background color for all messages */
+}
+
+.message:last-child {
+  border-bottom: none;
+}
+
+.message p {
+  margin: 8px 0;
+}
+
+.message strong {
+  font-size: 14px;
+}
+
+.message span {
+  float: right;
+  color: #888;
+}
+
+.unread {
+  font-weight: bold;
+  /* background-color removed for consistency */
+}
+
+.read {
+  color: #555;
+}
+
+.message.selected {
+  background-color: #e0f2f1; /* Background color when a message is selected */
+}
