@@ -13,6 +13,14 @@ InventoTrack is a comprehensive inventory management application designed to str
 - **Chat Feature**: Real-time communication between users with notifications, emojis, and link sharing.
 - **Security**: Implemented with Flask-Security-Too for robust authentication and authorization.
 
+LIVE API: https://inventotrack-dv5n.onrender.com/
+
+Logins:
+{
+"email": "wathika02@gmail.com",
+"password": "changeme"
+}
+
 ## Tech Stack
 
 - **Backend**: Flask
