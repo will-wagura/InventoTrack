@@ -21,7 +21,7 @@ const StatisticsHeader: React.FC = () => {
         </Button>
         <div className="user-info">
           <div className="user-avatar">
-            <img src="path-to-avatar-image" alt="User Avatar" />
+            <img src="avatar.jpg" alt="User Avatar" />
           </div>
           <div className="user-details">
             <span className="user-name">Jack Doe</span>
