@@ -31,34 +31,18 @@ def create_app():
     app.config["SECURITY_LOGIN_URL"] = None
     app.config["SECURITY_LOGOUT_URL"] = None
     app.config["SECURITY_VERIFY_URL"] = None
-    # app.config["SECURITY_PASSWORD_SALT"] = "my_precious_salt"
-    # app.config["SECURITY_PASSWORD_HASH"] = "bcrypt"
 
-    # Initialize database and migration with the already imported db
     db.init_app(app)
     migrate.init_app(app, db)
-
-    # Initialize Bcrypt
     bcrypt.init_app(app)
-
-    # Setup Flask-Mail
     mail.init_app(app)
-
-    # Setup JWT
     jwt.init_app(app)
 
-    # Setup CORS
-    cors.init_app(app, resources={r"*": {"origins": "*"}}, supports_credentials=True)
+    # CORS configuration
+    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
-    # Initialize SocketIO
     socketio.init_app(app, cors_allowed_origins="*")
 
-    # # Setup Flask-Security
-
-    # user_datastore = SQLAlchemyUserDatastore(db, User, Role)
-    # security = Security(app, user_datastore)
-
-    # security.init_app(app, datastore=user_datastore)
     # Register blueprints
     with app.app_context():
         from app.routes import (
@@ -84,7 +68,7 @@ def create_app():
         app.register_blueprint(users_routes.users_routes)
         app.register_blueprint(chat_routes.chat_bp)
         app.register_blueprint(stores_routes.stores_bp)
-        # Create database tables
+
         db.create_all()
 
     return app
