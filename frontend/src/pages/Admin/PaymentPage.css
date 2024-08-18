@@ -1,10 +1,24 @@
-
-.payment-table {
-  flex: 2;
+.payment-page-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-.payment-preview-product {
-  flex: 1;
-  background-color: #f0f0f0;
-  padding: 20px;
+.payment-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Align items to the top */
+  gap: 20px; /* Add some space between the table and the preview */
+}
+
+.payment-table {
+  flex: 2; /* Make the table take more space */
+}
+
+.preview-product {
+  flex: 1; /* Make the preview take less space */
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: #f9f9f9;
+  max-width: 300px; /* Set a max width for the preview panel */
 }
