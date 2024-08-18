@@ -53,7 +53,7 @@ Logins:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/will-wagura/InventoTrack.git --depth 1 && cd InventoTrack/backend
+   git clone https://github.com/will-wagura/InventoTrack.git --depth 1 && cd InventoTrack
    ```
 
 2. Create and activate a virtual environment and install dependencies

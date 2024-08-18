@@ -9,7 +9,9 @@ from flask_bcrypt import Bcrypt
 from flask_socketio import SocketIO
 from itsdangerous import URLSafeTimedSerializer
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # Initialize Flask extensions
 from .models import db, User, Role
 
@@ -46,7 +48,7 @@ def create_app():
     jwt.init_app(app)
 
     # Setup CORS
-    cors.init_app(app, resources={r"/api/*": {"origins": "*"}})
+    cors.init_app(app, resources={r"*": {"origins": "*"}}, supports_credentials=True)
 
     # Initialize SocketIO
     socketio.init_app(app, cors_allowed_origins="*")

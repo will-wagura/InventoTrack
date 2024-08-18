@@ -17,7 +17,7 @@ function StockInformation({ items = [], onDelete, onEdit }: Props) {
   const getAuthToken = () => localStorage.getItem("access_token");
 
   const axiosInstance = axios.create({
-    baseURL: 'http://127.0.0.1:5000',
+    baseURL: 'https://inventotrack-dv5n.onrender.com',
     headers: {
       Authorization: `Bearer ${getAuthToken()}`,
     },

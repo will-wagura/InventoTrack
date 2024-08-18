@@ -1,11 +1,12 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
 const apiClient: AxiosInstance = axios.create({
-    baseURL: 'http://127.0.0.1:5000',
+    baseURL: 'https://inventotrack-dv5n.onrender.com',
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'Allow-Control-Allow-Origin': '*',
     },
 });
 
