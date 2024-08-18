@@ -28,7 +28,9 @@ function App() {
             <Route path="/setting" element={<SettingPage />} />
           </Routes>
         </div>
-        <Footer />
+        <Footer setActiveComponent={function (component: string): void {
+          throw new Error('Function not implemented.');
+        } } />
       </div>
     </Router>
   );

@@ -4,7 +4,6 @@ import PaymentHeader from '../../components/Admin/PaymentHeader';
 import PaymentTable from '../../components/Admin/PaymentTable';
 import PaymentPreviewProduct from '../../components/Admin/PaymentPreviewProduct';
 
-
 interface Product {
   id: string;
   name: string;
@@ -24,9 +23,19 @@ interface Product {
 
 const PaymentPage: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [filter, setFilter] = useState<string | null>(null); // For filtering products
+  const [view, setView] = useState<'list' | 'grid'>('list'); // For toggling between grid and list views
 
   const handleProductClick = (product: Product) => {
     setSelectedProduct(product);
+  };
+
+  const handleFilterChange = (filterStatus: string) => {
+    setFilter(filterStatus);
+  };
+
+  const handleViewToggle = (newView: 'list' | 'grid') => {
+    setView(newView);
   };
 
   // Hardcoded array of products
@@ -47,11 +56,16 @@ const PaymentPage: React.FC = () => {
     image: '/maize.png' // Ensure the image path is correct
   }));
 
+  // Filter products based on the selected filter
+  const filteredProducts = filter
+    ? products.filter((product) => product.status === filter)
+    : products;
+
   return (
-    <div className="payment-page-container">
-      <PaymentHeader />
+    <div className={`payment-page-container ${view}-view`}>
+      <PaymentHeader onFilterChange={handleFilterChange} onToggleView={handleViewToggle} />
       <div className="payment-content">
-        <PaymentTable products={products} onProductClick={handleProductClick} />
+        <PaymentTable products={filteredProducts} onProductClick={handleProductClick} view={view} />
         {selectedProduct && <PaymentPreviewProduct product={selectedProduct} />}
       </div>
     </div>

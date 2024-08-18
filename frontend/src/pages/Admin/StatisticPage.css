@@ -7,7 +7,7 @@
 
 .overview .col-md-4 {
   margin-bottom: -270px;
-  margin-left: 10px;
+  margin-left: px2;
   margin-right: 600px;
   margin-top:2%;
  
@@ -24,7 +24,7 @@
 .best-selling-category {
   margin-top: 20px;
   margin-right: 0px;
-  margin-left:620px;
+  margin-left:647px;
   margin-bottom: 0%;
 
   position:relative;

@@ -18,11 +18,7 @@
   color: #343a40;
 }
 
-.see-all {
-  color: #007bff;
-  text-decoration: none;
-  font-size: 14px;
-}
+
 
 .see-all:hover {
   text-decoration: underline;

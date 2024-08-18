@@ -7,7 +7,6 @@ const BestSellingCategory: React.FC = () => {
     <div className="best-selling-category">
       <div className="category-header">
         <h5>Best selling category</h5>
-        <a href="#see-all" className="see-all">See All</a>
       </div>
       <table className="category-table">
         <thead>

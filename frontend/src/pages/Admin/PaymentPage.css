@@ -1,13 +1,3 @@
-.payment-page-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.payment-content {
-  display: flex;
-  flex: 1;
-}
 
 .payment-table {
   flex: 2;
