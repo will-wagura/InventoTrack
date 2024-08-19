@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
@@ -20,6 +21,7 @@ import LoginForm from './components/LoginForm';
 import Home from './pages/Merchant/Home';
 import SupplyRequest from './components/SupplyRequests'
 import StockInformation from './components/StockInformation';
+import { Item } from './types/Item';
 const App: React.FC = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
@@ -48,7 +50,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <div style={{ display: 'flex' }}>
-        {isAuthenticated && <Sidebar />}
+        {isAuthenticated && <Sidebar setActiveComponent={function (_value: React.SetStateAction<string>): void {
+          throw new Error('Function not implemented.');
+        } } />}
         <div style={{ flex: 1 }}>
           {isAuthenticated && <Header />}
           <Routes>
@@ -91,7 +95,11 @@ const App: React.FC = () => {
               path="/statistic"
               element={<PrivateRoute element={<Statistic />} isAuthenticated={isAuthenticated} />}
             />
-            <Route path="/stock-information" element={<StockInformation />} />
+            <Route path="/stock-information" element={<StockInformation onDelete={function (_index: number): void {
+              throw new Error('Function not implemented.');
+            } } items={[]} onEdit={function (_index: number, _editedItem: Item): void {
+              throw new Error('Function not implemented.');
+            } } />} />
             <Route path="/merchant-dashboard" element={<PrivateRoute element={<Home />} isAuthenticated={isAuthenticated} />} />
             <Route path="/clerk-dashboard" element={<PrivateRoute element={<ClerkDashboard />} isAuthenticated={isAuthenticated} />} />
             <Route path="/admin-dashboard" element={<PrivateRoute element={<AdminDashboard />} isAuthenticated={isAuthenticated} />} />

@@ -58,7 +58,6 @@ const LoginForm = () => {
         }
 
         switch (role) {
-          case "superadmin":
           case "merchant":
             navigate("/merchant-dashboard");
             break;
