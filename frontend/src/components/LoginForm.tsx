@@ -5,8 +5,9 @@ import { Link as RouterLink } from "react-router-dom";
 import { login } from "../services/api";
 import { AxiosError } from "axios";
 import "./LoginForm.css";
-import Logo from '../image/inventotrack-high-resolution-logo-transparent-side.png'
-import { FaUser, FaLock, FaGoogle } from 'react-icons/fa';
+import Logo from "../image/inventotrack-high-resolution-logo-transparent-side.png";
+import { FaUser, FaLock, FaGoogle } from "react-icons/fa";
+// FaEye, FaEyeSlash
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -14,6 +15,7 @@ const LoginForm = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [errors, setErrors] = useState({ email: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -42,16 +44,19 @@ const LoginForm = () => {
       try {
         const response = await login(email, password);
         const { access_token, refresh_token, role, message } = response.data;
-  
+
         localStorage.setItem("access_token", access_token);
         localStorage.setItem("refresh_token", refresh_token);
-  
+
         if (rememberMe) {
-          localStorage.setItem("rememberedUser", JSON.stringify({ email, password }));
+          localStorage.setItem(
+            "rememberedUser",
+            JSON.stringify({ email, password })
+          );
         } else {
           localStorage.removeItem("rememberedUser");
         }
-  
+
         switch (role) {
           case "superadmin":
           case "merchant":
@@ -67,11 +72,14 @@ const LoginForm = () => {
             navigate("/merchant-dashboard");
             break;
         }
-  
+
         alert(message);
       } catch (error) {
         const typedError = error as AxiosError<{ message: string }>;
-        alert("Login failed: " + (typedError.response?.data.message || "Unknown error"));
+        alert(
+          "Login failed: " +
+            (typedError.response?.data.message || "Unknown error")
+        );
       } finally {
         setIsLoading(false);
       }
@@ -89,9 +97,13 @@ const LoginForm = () => {
     }
   };
 
+  // const toggleShowPassword = () => {
+  //   setShowPassword(!showPassword);
+  // };
+
   return (
     <div className="login-container">
-      <img src={ Logo } alt="InventoTrack Logo" className="logo" />
+      <img src={Logo} alt="InventoTrack Logo" className="logo" />
       <div className="login-box">
         <h2 className="login-header">USER LOGIN</h2>
         <form onSubmit={handleSubmit}>
@@ -104,20 +116,28 @@ const LoginForm = () => {
               className={`input ${errors.email && "input-error"}`}
               autoComplete="off"
             />
-              <FaUser className="input-icon" />
-            {errors.email && <small className="error-text">{errors.email}</small>}
+            <FaUser className="input-icon" />
+            {errors.email && (
+              <small className="error-text">{errors.email}</small>
+            )}
           </div>
           <div className="input-field">
             <input
-              type="password"
+              type={password ? "text" : "password"}
+              // type={showPassword ? "text" : "password"}
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={`input ${errors.password && "input-error"}`}
               autoComplete="off"
             />
-              <FaLock className="input-icon" />
-            {errors.password && <small className="error-text">{errors.password}</small>}
+            <FaLock className="input-icon" />
+            {/* <span className="show-password-icon" onClick={toggleShowPassword}>
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span> */}
+            {errors.password && (
+              <small className="error-text">{errors.password}</small>
+            )}
           </div>
           <div className="login-options">
             <label className="checkbox-label">
@@ -142,11 +162,15 @@ const LoginForm = () => {
           <div className="divider-line"></div>
         </div>
         <button onClick={handleGoogleSignIn} className="google-sign-in-button">
-        <FaGoogle className="google-icon" />
+          <FaGoogle className="google-icon" />
           Continue with Google
         </button>
         <p className="signup-text">
-          Don’t have an account? <RouterLink to="/sign-up" className="signup-link">Sign up here</RouterLink>.
+          Don’t have an account?{" "}
+          <RouterLink to="/sign-up" className="signup-link">
+            Sign up here
+          </RouterLink>
+          .
         </p>
       </div>
     </div>
