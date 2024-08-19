@@ -1,0 +1,33 @@
+.payment-page-container {
+  display: flex;
+  flex-direction: column; /* Stack header on top */
+  height: 100vh;
+}
+
+.payment-header {
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  left: 360px;
+  right: 9px;
+  z-index: 1000; /* Ensure it stays on top */
+  background: white; /* Background color to cover content behind */
+}
+
+.payment-content {
+  display: flex;
+  flex: 1;
+  margin-top: 60px; /* Adjust based on the height of the header */
+}
+
+.payment-table-container {
+  flex: 1;
+  overflow-y: auto;
+  margin-right: 20px; /* Add space between table and preview */
+}
+
+.product-preview-container {
+  width: 300px; /* Adjust width as needed */
+  position: relative;
+  height: 100vh; /* Full height to align with the table */
+}
+

@@ -3,7 +3,6 @@ import UserList from '../../components/Admin/UserList';
 import AddUserButton from '../../components/Admin/AddUserButton';
 import './ManageUserPage.css';
 
-
 const ManageUserPage: React.FC = () => {
   const [users, setUsers] = useState([
     { name: 'John Doe', role: 'Admin', profilePicture: '/avatar.jpg', isActive: true },
@@ -23,8 +22,13 @@ const ManageUserPage: React.FC = () => {
     console.log(`Deleted user at index ${index}`);
   };
 
-  const handleAddUser = () => {
-    const newUser = { name: 'New User', role: 'Clerk', profilePicture: '/default-avatar.png', isActive: true };
+  const handleDeleteAll = () => {
+    setUsers([]);
+    console.log('Deleted all users');
+  };
+
+  const handleAddUser = (name: string, image: string) => {
+    const newUser = { name, role: 'Clerk', profilePicture: image, isActive: true };
     setUsers([...users, newUser]);
     console.log('Added new user');
   };
@@ -37,6 +41,7 @@ const ManageUserPage: React.FC = () => {
       <h1>Manage Users</h1>
       <UserList users={clerks} onToggleActivation={handleToggleActivation} onDelete={handleDelete} />
       <AddUserButton onAddUser={handleAddUser} />
+      <button className="delete-all-btn" onClick={handleDeleteAll}>Delete All Users</button>
     </div>
   );
 };

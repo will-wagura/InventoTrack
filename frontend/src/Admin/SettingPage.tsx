@@ -2,6 +2,29 @@ import React, { useState } from 'react';
 import './SettingPage.css';
 import { FaUserCog, FaLock, FaUser } from 'react-icons/fa';
 
+// Language options mapping
+const languageOptions = {
+    'en': 'English',
+    'es': 'Spanish',
+    'fr': 'French',
+    'de': 'German',
+    'it': 'Italian',
+    'pt': 'Portuguese',
+    // Add more languages as needed
+};
+
+// Timezone options mapping
+const timezoneOptions = {
+    'UTC': 'Coordinated Universal Time (UTC)',
+    'PST': 'Pacific Standard Time (PST)',
+    'EST': 'Eastern Standard Time (EST)',
+    'CST': 'Central Standard Time (CST)',
+    'MST': 'Mountain Standard Time (MST)',
+    'IST': 'Indian Standard Time (IST)',
+    'GMT': 'Greenwich Mean Time (GMT)',
+    // Add more timezones as needed
+};
+
 // General Settings Component
 const GeneralSettings: React.FC = () => {
     const [siteTitle, setSiteTitle] = useState('');
@@ -27,20 +50,22 @@ const GeneralSettings: React.FC = () => {
                 value={timezone}
                 onChange={(e) => setTimezone(e.target.value)}
             >
-                <option value="UTC">UTC</option>
-                <option value="PST">PST</option>
-                <option value="EST">EST</option>
-                {/* Add more options as needed */}
+                {Object.entries(timezoneOptions).map(([value, label]) => (
+                    <option key={value} value={value}>
+                        {label}
+                    </option>
+                ))}
             </select>
             <h3>Language</h3>
             <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
             >
-                <option value="en">English</option>
-                <option value="es">Spanish</option>
-                <option value="fr">French</option>
-                {/* Add more options as needed */}
+                {Object.entries(languageOptions).map(([code, name]) => (
+                    <option key={code} value={code}>
+                        {name}
+                    </option>
+                ))}
             </select>
             <button className="btn-primary" onClick={handleSave}>Save General Settings</button>
         </div>

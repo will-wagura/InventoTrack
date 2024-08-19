@@ -62,7 +62,7 @@ const PaymentPage: React.FC = () => {
     : products;
 
   return (
-    <div className={`payment-page-container ${view}-view`}>
+    <div className="payment-page-container">
       <PaymentHeader onFilterChange={handleFilterChange} onToggleView={handleViewToggle} />
       <div className="payment-content">
         <PaymentTable products={filteredProducts} onProductClick={handleProductClick} view={view} />

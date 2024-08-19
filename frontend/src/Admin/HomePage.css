@@ -14,10 +14,11 @@
     padding: 15px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin-right: 20px; /* Consistent right margin */
+    margin-right: 66px; /* Consistent right margin */
     box-sizing: border-box;
     position: static;
     height: auto; /* Adjust height as needed */
+    margin-top: -56px;
 }
 
 .right-column {
@@ -28,14 +29,18 @@
 .dashboard-header, .dashboard-stats, .dashboard-charts {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: -5px;
     transform: scale(0.9);
     transform-origin: top left;
-    margin-left: 20px; /* Match the updated margin-left */
+    margin-left: -12px;
+    top: -17px;
+    margin-right: 635px;
+    width: 1161px;
 }
 
 .dashboard-stats .stat, .dashboard-charts .chart {
     background: #fff;
+    margin-top: -22px;
     padding: 15px; 
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -51,7 +56,7 @@
 
 
 .right-section {
-    width: 374px;
+    width: 417px;
     padding: 20px;
     padding-bottom: 180px;
     border-left: 1px solid #ccc;
