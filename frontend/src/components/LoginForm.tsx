@@ -28,6 +28,13 @@ const LoginForm = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const accessToken = localStorage.getItem("access_token");
+    if (accessToken) {
+      navigate("/merchant-dashboard"); // or whatever dashboard route you want to redirect to
+    }
+  }, [navigate]);
+
   const validateForm = () => {
     const tempErrors = {
       email: email ? "" : "Email is required",
@@ -122,7 +129,7 @@ const LoginForm = () => {
           </div>
           <div className="input-field">
             <input
-              type={password ? "text" : "password"}
+              type="password"
               // type={showPassword ? "text" : "password"}
               placeholder="Password"
               value={password}

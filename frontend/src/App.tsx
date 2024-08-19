@@ -22,6 +22,7 @@ import Home from './pages/Merchant/Home';
 import SupplyRequest from './components/SupplyRequests'
 import StockInformation from './components/StockInformation';
 import { Item } from './types/Item';
+
 const App: React.FC = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
