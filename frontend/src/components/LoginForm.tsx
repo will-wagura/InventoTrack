@@ -35,24 +35,23 @@ const LoginForm = () => {
     return Object.values(tempErrors).every((x) => x === "");
   };
 
-  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (validateForm()) {
       setIsLoading(true);
       try {
         const response = await login(email, password);
         const { access_token, refresh_token, role, message } = response.data;
-
+  
         localStorage.setItem("access_token", access_token);
         localStorage.setItem("refresh_token", refresh_token);
-
+  
         if (rememberMe) {
           localStorage.setItem("rememberedUser", JSON.stringify({ email, password }));
         } else {
           localStorage.removeItem("rememberedUser");
         }
-
+  
         switch (role) {
           case "superadmin":
           case "merchant":
@@ -68,7 +67,7 @@ const LoginForm = () => {
             navigate("/merchant-dashboard");
             break;
         }
-
+  
         alert(message);
       } catch (error) {
         const typedError = error as AxiosError<{ message: string }>;

@@ -81,7 +81,9 @@ export const refreshToken = async (refreshToken: string) => {
 };
 export const login = async (email: string, password: string) => {
     try {
-        const { data } = await apiClient.post<{ access_token: string, refresh_token: string }>(
+        const { data } = await apiClient.post<{
+          data: { access_token: any; refresh_token: any; role: any; message: any; }; access_token: string, refresh_token: string 
+}>(
             '/login',
             { email, password }
         );
