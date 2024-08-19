@@ -150,6 +150,10 @@
     width: 100%;
     max-width: 400px;
     text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
   }
   
   .login-header {
@@ -177,6 +181,15 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1rem;
+  }
+
+  .input-icon {
+    color: #20B2AA;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    align-items: center;
+    padding-top: 18px;
+    padding-left: 10px;
   }
   
   .input-error {
@@ -222,7 +235,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
+    margin: 0;
   }
   
   .sign-in-button:hover {
@@ -237,8 +250,8 @@
     color: #292929;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
-    margin-top: 10px;
+    margin: 0;
+    align-items: center;
   }
   
   .google-sign-in-button:hover {
@@ -280,15 +293,6 @@
   .signup-link:hover {
     text-decoration: underline;
   }
-  
-  .input-icon {
-    color: #20B2AA;
-    font-size: 1.5rem;
-    margin-right: 10px;
-    align-items: center;
-    padding-top: 18px;
-    padding-left: 10px;
-  }
 
   .google-icon {
     color: #4285F4;
@@ -298,4 +302,9 @@
     border-radius: 50%;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  ::placeholder {
+    font-family: 'Afacad';
+    font-size: 1rem;
   }
